@@ -1,0 +1,100 @@
+<!--pages/share_home/share_home.wxml-->
+<!-- <view class="tops clearfix">
+   <view class="img1">
+      <image src="../../images/share1.png" />
+   </view>
+   <view class="top-ru">
+       <view class="font">两大平台多类型共享业务</view>
+       <view class="top-img">
+         <image src="../../images/share1 (2).png" />
+         <image src="../../images/share1 (3).png" />
+       </view>
+       <view class="top-j"> 平台定价型业务（含购你售）按共享分润比例参与分红非定价型业务自行掌控。 </view>
+       <view class="join">加入共享联盟 仅需99.9元</view>
+   </view>
+
+</view> -->
+<view class="top">
+   <view class="rank_head">
+       <image  src="../../images/head.jpg" />
+   </view>
+   <view class="rank_name">马里奥
+      <view class="times">加入时间：2019-08-08 16:20:20</view>
+   </view>
+  
+   <view class="top_bot">
+       <view class="bot_one">
+         <view >724</view>
+         <view class="fan">当月总收益</view>
+       </view>
+       <view class="bot_hen"></view>
+       <view class="bot_one">
+         <view >724</view>
+         <view class="fan">累计总收益</view>
+       </view>
+       
+   </view>
+</view>
+<view class="four">
+   <view class="shar" bind:tap="shareM">
+     <view class="shae-img">
+        <image src="../../images/s9.png" />
+     </view>
+      <view >共享码</view>
+   </view>
+   <view class="shar" bind:tap="record">
+     <view class="shae-img">
+        <image src="../../images/s01.png" />
+     </view>
+      <view >共享战绩</view>
+   </view>
+   <view class="shar">
+     <view class="shae-img">
+        <image src="../../images/s02.png" />
+     </view>
+      <view >共享成员</view>
+   </view>
+   <view class="shar">
+     <view class="shae-img">
+        <image src="../../images/s04.png" />
+     </view>
+      <view >联盟伙伴</view>
+   </view>
+</view>
+
+<view class="bottos">
+    <view class="font">加入即拥有以下特权</view>
+    <view class="sur">
+       <view class="round"></view>  
+       <view class="zi">特权一:共享订单分红</view>
+    </view>
+    <view class="bott-img">
+      <image  src="../../images/share2.png" />
+    </view>
+    <view class="sur">
+       <view class="round"></view>  
+       <view class="zi">特权二:分享关联机制</view>
+    </view>
+    <view class="bott-img">
+      <image  src="../../images/share3.png" />
+    </view>
+    <view class="sur">
+       <view class="round"></view>  
+       <view class="zi">特权三:邀请共享成员</view>
+    </view>
+    <view class="bott-img">
+      <image  src="../../images/share4.png" />
+    </view>
+    <view class="sur">
+       <view class="round"></view>  
+       <view class="zi">特权四:赠送超值积分币</view>
+    </view>
+    <view class="bott-img">
+      <image  src="../../images/share5.png" />
+    </view>
+</view>
+  <view style="height:100rpx;"></view>
+<view class="footer">
+   <view >加入共享联盟，立享分红</view>
+   <view class="go">立即前往</view>
+</view>

@@ -1,0 +1,43 @@
+<view class="tit">共享联盟</view>
+		<view>资源共享，利润同分，轻松让你赚外快。客户订单保密(你的共享订单，仅供你自己查看，保障客户不流失)</view>
+		<view class="tit">开通途径</view>
+		<view class="threes" style='margin-bottom:10px !important;'>
+			<view style='margin-bottom:10px !important;'>
+				<view style="position: relative;overflow: hidden;">
+					<image src="../../images/001.png"></image>
+					<image src="../../images/xsmf.png"class="xsmf"></image>
+					<view class="stipp">免费申请成为盟友</view>
+					<view class="go go1" bindtap='befree'>前往</view>
+				</view>
+			</view>
+			<view style='margin-bottom:10px !important;'>
+				<view>
+					<image src="../../images/002.png"></image>
+					<view class="stipp">付费开通成为盟主</view>
+					<view class="go go2" bindtap='applyff'>前往</view>
+				</view>
+			</view>
+			<view style='margin-bottom:10px !important;'>
+				<view>
+					<image src="../../images/003.png"></image>
+					<view class="stipp">战略合作成为盟主团队人数:≥5</view>
+					<view class="go go3" bindtap='beleagure'>前往</view>
+				</view>
+			</view>
+		</view>
+        <view style="font-size: 26rpx;color: #FF0000;letter-spacing: 2rpx;text-align: center;margin-top: 20rpx;">注：2019年6月1日后盟友身份将收取盟友加盟费用。</view>
+		<view class="firswarap">
+			<view>共享身份分为盟友和盟主；盟友满足一定条件后可升级成为盟主。</view>
+			<view>1. 盟友可享共享业务订单分润20%；<br/>
+2. 盟主产生的共享业务订单分润提升至25%；<br/>
+3. 盟主可不限制发展下级盟友，盟友订单，盟主可获得5%分润。<br/>
+4. 开放业务：预约艺人、祝福视频业务、新人孵化付费服务、推广付费服务、线下活动付费服务、付费成为盟主。
+			</view>
+		</view>
+		<view class="firswarap" style="height: 280rpx;">
+			<view>共享方式</view>
+			<view>1.将共享二维码或对应业务板块分享给用户、社交群、朋友圈等
+第二方社交平台。<br/>
+2.将自己的共享二维码通过各种方式展示在潜在资源渠道处如:餐厅,
+酒店,KTV,美容美发等,或是业务海报上</view>
+		</view>

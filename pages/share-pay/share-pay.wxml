@@ -1,0 +1,13 @@
+<!--pages/share-pay/share-pay.wxml-->
+<view class="nav">
+   <view style='margin-left:20rpx;'> 开通类型</view>
+    <view class='nav-j'>
+        <view >
+          共享联盟身份
+          <view style="float:right;">￥99元</view>
+        </view>
+        <view style="font-size:22rpx">赠送积分币999个</view>
+    </view>
+</view>
+
+ <view class="go">立即支付</view>

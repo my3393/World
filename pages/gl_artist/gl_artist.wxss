@@ -1,0 +1,91 @@
+page{
+	background-color: #f0f0f0;
+}
+.progress{
+	background-color: white;
+	line-height: 96rpx;
+	padding: 0 20rpx;
+	box-sizing: border-box;
+	font-size: 30rpx;
+	letter-spacing: 2rpx;
+	color: #333333;
+    box-shadow: 0 0 4rpx #bfbfbf;
+    margin-bottom: 20rpx;
+}
+.progress image{
+	width: 13rpx;
+    height: 23rpx;
+	float: right;
+	position: relative;
+	top: 36rpx;
+}
+.item{
+	width: 100%;
+	height: 180rpx;
+	background-color: white;
+	border-bottom: 2rpx solid #DDDDDD;
+	padding: 50rpx 20rpx;
+	box-sizing: border-box;
+	position: relative;
+}
+.img{
+	width: 80rpx;
+	height: 80rpx;
+	position: relative;
+	border-radius: 80rpx;
+	overflow: hidden;
+	float: left;
+	margin-right: 20rpx;
+}
+.img image{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	height: 100%;
+    width: 100%;
+}
+.name{
+	font-size: 28rpx;
+	color: #333333;
+	letter-spacing: 2rpx;
+}
+.uid{
+	font-size: 26rpx;
+	color: #999999;
+	letter-spacing: 2rpx;
+	margin-top: 6rpx;
+}
+.setfee{
+	width: 160rpx;
+	line-height: 60rpx;
+	border-radius: 6rpx;
+	background-color: #FF5CAB;
+	color: white;
+	font-size: 24rpx;
+	letter-spacing: 2rpx;
+	position: absolute;
+	text-align: center;
+	right: 20rpx;
+	top: 60rpx;
+}
+.order_center{
+	width: 156rpx;
+	line-height: 58rpx;
+	border-radius: 6rpx;
+	color: #666666;
+	font-size: 24rpx;
+	border: 1rpx solid #cccccc;
+	letter-spacing: 2rpx;
+	position: absolute;
+	text-align: center;
+	right: 20rpx;
+	top: 60rpx;
+}
+.help_enter{
+	width: 120rpx;
+	position: fixed;
+	bottom: 20rpx;
+	right: 20rpx;
+	z-index: 99;
+}

@@ -1,0 +1,11 @@
+<!--pages/wallet_succ/wallet_succ.wxml-->
+<view class="item">
+   <view class="item-img">
+     <image src="../../images/success.png" />
+
+   </view>
+   <view class='ref'>申请提现已提交</view>
+   <view style="color:#666666;">7个工作日内到账~</view>
+   <view class="back" bind:tap="back">返回个人中心</view>
+
+</view>

@@ -1,0 +1,124 @@
+<!--pages/mines/mines.wxml-->
+<view class="top">
+   <view class="rank_head">
+       <image  src="{{user.head_photo}}" />
+   </view>
+   <view class="rank_name"> {{user.username}}</view>
+   <view class="top_bot">
+       <view class="bot_one">
+         <view >{{user.follow}}</view>
+         <view class="fan">关注</view>
+       </view>
+       <view class="bot_hen"></view>
+       <view class="bot_one">
+         <view >{{user.fans}}
+    
+         </view>
+         <view class="fan">粉丝</view>
+       </view>
+       <view class="bot-y" wx:if="{{user.is_actor == 2}}">艺人身份
+       </view>
+        <view class="bot-y" wx:if="{{user.is_actor == 1}}">审核中
+       </view>
+        <view class="bot-y" wx:elif="{{user.is_actor == 3}}" bindtap='ruzhu'>艺人入驻
+       </view>
+   </view>
+</view>
+
+<view class='l-head clearfix' bind:tap="shar">
+  <view class='l-head-rz'>
+    <view class='l-rz' bindtap='apply'>
+      <view>共享联盟</view>
+      <view>共享成就我的“小金库”</view>
+    </view>
+    <image src='../../images/share01.png'></image> 
+  </view>
+  <view class='l-head-rz'>
+    <view class='l-rz' bindtap='find'>
+      <view>钱包</view>
+      <view>我的收益都在这</view>
+    </view>
+    <image src='../../images/cask.png'></image>
+  </view>
+
+</view>
+
+<view class="botto" style="margin-bottom:20rpx">
+    <view class="mitem" bindtap="help_enter">
+            <image src="../../images/mine01.png"></image>
+            <view>通告</view>
+            <view class="allrm">
+                <image src="../../images/enter.png"></image>
+            </view>
+    </view>
+     <!-- <view class="mitem" >
+            <image src="../../images/mine02.png"></image>
+            <view>福利专区</view>
+            <view class="allrm">
+                <image src="../../images/enter.png"></image>
+            </view>
+    </view> -->
+     <!-- <view class="mitem last" bindtap="help_enter">
+            <image src="../../images/mine03.png"></image>
+            <view>招商合作</view>
+            <view class="allrm">
+                <image src="../../images/enter.png"></image>
+            </view>
+    </view> -->
+    
+
+</view>
+<view class="botto" style="margin-bottom:20rpx">
+    <view class="mitem" bindtap="make">
+            <image src="../../images/mine04.png"></image>
+            <view>预约订单</view>
+            <view class="allrm">
+                <image src="../../images/enter.png"></image>
+            </view>
+    </view>
+     <view class="mitem" bindtap="isagent" hidden="{{datas.is_agent == 2}}">
+            <image src="../../images/mine05.png"></image>
+            <view>申请成为经纪人</view>
+            <view class="allrm">
+                <image src="../../images/enter.png"></image>
+            </view>
+    </view>
+     <view class="mitem" bindtap="gl_artist" wx:if="{{user.is_agent == 2}}">
+            <image src="../../images/mine05.png"></image>
+            <view>经纪人</view>
+            <view class="allrm">
+                <image src="../../images/enter.png"></image>
+            </view>
+    </view>
+     <!-- <view class="mitem last" bindtap="help_enter">
+            <image src="../../images/mine06.png"></image>
+            <view>发布活动广告</view>
+            <view class="allrm">
+                <image src="../../images/enter.png"></image>
+            </view>
+    </view> -->
+    
+
+</view>
+
+<view class="botto" style="margin-bottom:20rpx">
+    <!-- <view class="mitem" bindtap="help_enter">
+            <image src="../../images/mine07.png"></image>
+            <view>设置</view>
+            <view class="allrm">
+                <image src="../../images/enter.png"></image>
+            </view>
+    </view> -->
+     <view class="mitem" style="margin-top: 10px;border-bottom: 0;" bindtap='callkf'>
+            <image src="../../images/mine08.png"></image>
+            <view>联系客服</view>
+            <view class="allrm kfs" bind:tap="plone" style="margin-right:190rpx">4008292878
+                <view class="kf">
+                   <image src="../../images/enter.png"></image>
+                </view>
+            </view>
+     </view>
+    
+    
+
+</view>

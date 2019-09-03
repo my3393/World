@@ -1,0 +1,162 @@
+/* pages/mine_make/mine_make.wxss */
+page{
+  font-size: 30rpx;
+  background: #f2f2f2;
+}
+.tag{
+  width: 100%;
+  height: 70rpx;
+  background: linear-gradient(#FE5BA9,#FF6977);
+  color: #fff;
+  font-weight: 300;
+  display: flex;
+  justify-content: space-around;
+  line-height: 70rpx;
+  padding: 0 90rpx;
+  box-sizing: border-box;
+}
+.active{
+  font-weight: 700; 
+}
+.res{
+  margin-top: 20rpx;
+}
+.nav{
+  background: #fff;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.nav-nam{
+  display: inline-block;
+}
+.nav-rig{
+  float: right;
+}
+.nav-list{
+  color: #5E5E5E;
+  margin: 20rpx 0;
+}
+.nav-img{
+  width: 28rpx;
+  height: 28rpx;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.nav-img image{
+  width: 100%;
+  height: 100%;
+}
+.nav-name{
+  display: inline-block;
+  vertical-align: middle;
+  color: #89898A;
+}
+.list{
+  font-size: 24rpx;
+}
+.bott{
+  height: 80rpx;
+  width: 100%;
+  line-height: 80rpx;
+  color: #fff;
+}
+.plone{
+  width: 48%;
+  background: #FF7174;
+  text-align: center;
+  display: inline-block;
+  height: 80rpx;
+}
+.plones{
+  width: 100%;
+  background: #FF7174;
+  text-align: center;
+  display: inline-block;
+  height: 80rpx;
+}
+.ploness{
+  width: 100%;
+  background: #D8D4D4;
+  text-align: center;
+  display: inline-block;
+  height: 80rpx;
+}
+.p-img{
+  width: 44rpx;
+  height: 36rpx;
+  display: inline-block;
+  margin-right: 10rpx;
+}
+.p-img image{
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+.p-name{
+  display: inline-block;
+  vertical-align: middle;
+}
+.refuse{
+  display: inline-block;
+  width: 24%;
+  background: #D8D8D8;
+  text-align: center;
+}
+.agreed{
+  display: inline-block;
+  width: 28%;
+  text-align: center;
+  background: #FF4648;
+}
+.refu{
+  width: calc(100% - 160rpx);
+  
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  background: #fff;
+  transform: translate(-50%,-50%);
+  border-radius: 30rpx;
+}
+.h2{
+  margin: 20rpx 0;
+  width: 100%;
+  text-align: center;
+}
+.area{
+  padding: 10rpx 20rpx;
+  box-sizing: border-box;
+  width: 100%;
+  height: 200rpx;
+}
+.refu-bott{
+  display: flex;
+  justify-content: space-around;
+  height: 70rpx;
+  color: #999999;
+}
+.que{
+  color: #EC018B;
+}
+.empty-go{
+  width: 274rpx;
+  height: 75rpx;
+  text-align: center;
+  line-height: 75rpx;
+  background: linear-gradient(#FE5BA9,40%,#FF6977);
+  color: #fff;
+  margin-top: 20rpx;
+  display: inline-block;
+  border-radius: 36rpx;
+}
+.kon-img{
+  width: 348rpx;
+  height: 321rpx;
+  display: inline-block;
+
+}
+.kon-img image{
+  width: 100%;
+  height: 100%;
+}

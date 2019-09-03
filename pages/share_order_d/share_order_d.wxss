@@ -1,0 +1,53 @@
+/* pages/share_order_d/share_order_d.wxss */
+
+page{
+  background: #f2f2f2;
+  font-size: 30rpx;
+}
+.deta{
+  background: #fff;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.right{
+  float: right;
+}
+.timd{
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  color: #666666;
+}
+.user{
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #fff;
+  padding:0 20rpx;
+  box-sizing: border-box;
+  margin-top: 1rpx;
+  color: #666666;
+}
+.user-head{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 30rpx;
+}
+.user-head image{
+  width: 100%;
+  height: 100%;
+}
+.user-name{
+  display: inline-block;
+  vertical-align: middle;
+}
+.user-tim{
+  float: right;
+}
+.s{
+  color: #333;
+  background: #FFD8EB;
+}

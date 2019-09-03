@@ -1,0 +1,38 @@
+.wran {
+    width: 120rpx;
+    height: 120rpx;
+    margin-left: calc(50% - 60rpx);
+    margin-top: 120rpx;
+}
+
+.rtip {
+    font-size: 30rpx;
+    color: #232323;
+    letter-spacing: 2rpx;
+    text-align: center;
+    margin-top: 30rpx;
+    margin-bottom: 60rpx;
+}
+
+.reason {
+    text-align: center;
+    font-size: 30rpx;
+    color: #999;
+    letter-spacing: 2rpx;
+    margin-bottom: 30rpx;
+}
+
+.submit {
+    width: 500rpx;
+    line-height: 100rpx;
+    text-align: center;
+    color: white;
+    letter-spacing: 2rpx;
+    background-color: #ff5cab;
+    border-radius: 100rpx;
+    margin-left: calc(50% - 250rpx);
+}
+.reasons{
+    
+    display: inline-block;
+}

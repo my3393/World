@@ -1,0 +1,21 @@
+<view class="records"  >
+    <view class="item">
+        <view class="sou">
+           在线预约
+            <view class="fee">
+                <small>+</small>{{data[idx].price}}841</view>
+        </view>
+        <view class="laizhi">
+            考核为
+            <view>费用：{{data[idx].originPrice}}894</view>
+        </view>
+        <view class="source">
+           {{data[idx].info}}打算
+            
+        </view>
+    </view>
+</view>
+<view class="none" hidden='{{counts != 0}}'>
+    <image src='../../images/sharenone.png'></image>
+    <view>暂无共享战绩~</view>
+</view>

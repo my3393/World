@@ -1,0 +1,23 @@
+/* pages/star_detail/star_detail.wxss */
+
+
+.notice-detail{
+    padding: 40rpx;
+    background-color: white;   
+}
+.notice-detail text{
+    display: block;
+    font-size: 28rpx;
+    color: #333333;
+    margin-bottom: 50rpx;
+}
+.notice-detail view{
+    font-size: 26rpx;
+    color: #808080;
+    letter-spacing: 2rpx;
+    line-height: 40rpx;
+    padding-bottom: 30rpx;
+    box-sizing: border-box;
+}
+
+

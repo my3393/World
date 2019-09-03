@@ -1,0 +1,72 @@
+<!--index.wxml-->
+<!-- 顶部栏 -->
+<view class='topnav'>
+    <view bindtap='showlabel'>{{labels}}
+        <image src='../../images/adown.png' style='width:30rpx;height: 18rpx;position: relative;top:3rpx;'></image>
+    </view>
+    <view>
+        <image src='../../images/position.png' style='width:24rpx;height: 30rpx;position: relative;top:6rpx;'></image>
+        <picker class='city' value="{{city[city_index].id}}" data-selecthx="{{city[city_index].region_name}}" range="{{city}}" range-key="{{'region_name'}}" bindchange="bindPickerChange_hx">
+            <view class="picker">
+                {{city[city_index].region_name}}
+            </view>
+        </picker>
+    </view>
+</view>
+<!-- 通告列表 -->
+<view class='list'>
+    <!-- item  -->
+    <view class='item' bindtap='todetail' wx:for='{{announcement}}' wx:for-index='idx' id='{{announcement[idx].announcement_id}}'>
+        <view class='headimg' wx:if="{{announcement[idx].head_photo == null}}">
+            <image src='../../images/head.jpg'></image>
+        </view>
+        <view class='headimg' wx:elif="{{announcement[idx].head_photo == ''}}">
+            <image src='../../images/head.jpg'></image>
+        </view>
+        <view class='headimg' wx:else>
+            <image mode='aspectFill' src='{{announcement[idx].head_photo}}'></image>
+        </view>
+        <view class='uname' wx:if="{{announcement[idx].username == null}}">万军</view>
+        <view class='uname' wx:else>{{announcement[idx].username}}</view>
+        <view class='time'>{{announcement[idx].create_date}}</view>
+        <view class='bigtitle'>{{announcement[idx].announcement_title}}</view>
+        <view class='sitem'>
+            <text>预<text style='color: white;'>空</text>算</text>
+            <text style='color:#fe5ba9;'>{{announcement[idx].min_price}}~{{announcement[idx].max_price}}</text>
+        </view>
+        <view class='sitem'>
+            <text>所在地</text>
+            <text>{{announcement[idx].cityname}}-{{announcement[idx].areaname}}</text>
+        </view>
+        <view class='sitem' style='margin-bottom: 10rpx;'>
+            <text>时<text style='color: white;'>空</text>间</text>
+            <text>{{announcement[idx].start_date}}~{{announcement[idx].end_date}}</text>
+        </view>
+        <view class='lbes'>
+            <image src='../../images/notice-icon.png'></image>
+            <text>{{announcement[idx].label_name}}</text>
+        </view>
+        <!-- poster -->
+        <view class='poster' wx:if='{{announcement[idx].poster_path == ""}}'>
+            <image src='../../images/notice-bg.jpg'></image>
+        </view>
+        <view class='poster' wx:elif='{{announcement[idx].poster_path == null}}'>
+            <image src='../../images/notice-bg.jpg'></image>
+        </view>
+        <view class='poster' mode='aspectFill' wx:else>
+            <image src='{{announcement[idx].poster_path}}'></image>
+        </view>
+    </view>
+</view>
+<!-- 发布通告 -->
+<image src='../../images/Announcement.png' class='Announcement floatbtn' bindtap='subnotice'></image>
+<!-- 分类标签筛选 -->
+<view class='mask popup-label' hidden='{{showlabel}}'>
+    <view class='label'>
+        <view class='ltit'>艺人类型</view>
+        <image src='../../images/close.png' bindtap='close'></image>
+        <view class='labels'>
+            <text wx:for="{{label}}" wx:for-index="idx" id='{{label[idx].label_id}}' data-name='{{label[idx].label_name}}' data-num='{{idx}}' class='{{num == idx?"iact":""}}' bindtap='selectlabel'>{{label[idx].label_name}}</text>
+        </view>
+    </view>
+</view>

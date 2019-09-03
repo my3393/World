@@ -1,0 +1,94 @@
+/* pages/wallet/wallet.wxss */
+.itwm{
+  padding:0 20rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  position: relative;
+}
+.wallet{
+  width: 100%;
+  height: 300rpx;
+  position: relative;
+}
+.wallet image{
+  width: 100%;
+  height: 100%;
+}
+.intor{
+  position: absolute;
+  top: 44rpx;
+  left: 40rpx;
+  color: #fff;
+  width: 100%;
+
+}.money{
+  margin-top: 30rpx;
+}
+.mone{
+  width: 47%;
+  display: inline-block;
+}
+.hen{
+  width: 2rpx;
+  height: 80rpx;
+  display: inline-block;
+  background: #fff;
+}
+.mone-intor{
+  width: 49%;
+  float: right;
+  display: flex;
+  justify-content: space-around;
+  margin-right: 27rpx;
+  font-size: 26rpx;
+}
+.int-img{
+  width: 44rpx;
+  height: 44rpx;
+  display: inline-block;
+  margin-bottom: 10rpx;
+}
+.int-img image{
+  width: 100%;
+  height: 100%;
+}
+.tex{
+  text-align: center;
+}
+
+/* 说明 */
+.mark{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 12;
+}
+.marktop{
+width: 100%;
+text-align: center;
+margin-bottom: 20rpx;
+}
+.markron{
+  font-size: 30rpx;
+background: #fff;
+width: calc(100% - 260rpx);
+margin-left: 130rpx;
+margin-top: 200rpx;
+padding: 20rpx 20rpx;
+box-sizing: border-box;
+height: 450rpx;
+border-radius:12rpx;
+letter-spacing:1rpx;
+}
+.close{
+margin-top: 30rpx;
+width: 100%;
+text-align: center;
+}
+.close image{
+width: 50rpx;
+height: 50rpx;
+}

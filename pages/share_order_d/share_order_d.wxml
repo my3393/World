@@ -1,0 +1,33 @@
+<!-- pages/share_order_d/share_order_d.wxml -->
+<view class="deta">
+  <view>
+    预约艺人：马里
+    <view class="right">待接单</view>
+  </view>
+  <view style="margin-top:20rpx;">商演：星河商场开业表演</view>
+  <view class="timd">
+    活动时间
+    <view  style="margin-top:20rpx;">2019-08-08 10:23:23~11:00:00</view>
+  </view>
+  <view class="timd">
+     活动地点：
+    <view  style="margin-top:20rpx;">
+ 活动地点：
+广东省深圳市龙华新区星河商场1楼 </view>
+  </view>
+ 
+</view>
+ <view class="user ">
+     <view class="user-head">
+       <image src="../../images/head.jpg" />
+     </view>
+     <view class="user-name">马里奥</view>
+     <view class="user-tim">2019.04.01	10:00</view>
+ </view>
+  <view class="user s">
+     <view class="user-head">
+       <image src="../../images/head.jpg" />
+     </view>
+     <view class="user-name">点击联系</view>
+     <view class="user-tim">活动预算：10:00</view>
+ </view>

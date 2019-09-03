@@ -1,0 +1,61 @@
+<!--pages/funcicle/funcicle.wxml-->
+<view class='tlebels'>
+    <view class='active' data-num='{{idx}}' wx:for='{{labels}}' wx:key='{{index}}' class='{{num == idx?"active":""}}' wx:for-index='idx' id='{{labels[idx].label_id}}' bindtap='selectlabel'>{{labels[idx].label_name}}</view>
+</view>
+<!-- 内容部分 -->
+<view class='allvideos' hidden='{{showvideo}}'>
+    <input type='text' class='searchs' bindinput='getkeyword' bindconfirm='tosearch' placeholder='请输入搜索关键字'></input>
+    <view class='wrap'>
+        <view class='fitem' wx:for='{{videos}}'  wx:key='{{index}}' wx:for-index='idx' id="{{videos[idx].user_id}}" data-ids='{{videos[idx].authorized_video}}'  catchtap='seevideo'>
+            <view class='video'>
+                <view class='zz'></view>
+                <!-- <video controls="{{false}}" poster='{{videos[idx].videoconver}}' show-center-play-btn="{{false}}" src='{{videos[idx].authorized_video}}' show-play-btn="{{false}}" objectFit="cover"></video>     -->
+                <image src='{{videos[idx].videoconver}}' mode='aspectFill'></image>
+                <view style='display: inline-block;position:absolute;bottom:10rpx;right: 10rpx;font-size: 24rpx;color: #fe5ba9;border: 1px solid #fe5ba9;border-radius: 6rpx;width: 140rpx;line-height: 50rpx;text-align: center;z-index:100;' id="{{videos[idx].user_id}}" catchtap='todetail'>立即预约</view>
+            </view>
+            <view class='ibottom clearfix'>
+                <view class='fhead' catchtap='todetail' id="{{videos[idx].user_id}}">
+                    <image mode='aspectFill' src='{{videos[idx].head_photo}}'></image>
+                </view>
+                <text>{{videos[idx].username}}</text>
+                <view class='heats'>
+                    <image src='../../images/ico-hoted.png' class='heat'></image>{{videos[idx].heat}}</view>
+                <view class='flabel'>{{videos[idx].label_name}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class='wraps' hidden='{{!showvideo}}'>
+    <view class='fuitem clearfix' wx:for='{{others}}' wx:for-index="idx"  wx:key='{{index}}'>
+        <view class='fuheadimg' catchtap='todetail' id='{{others[idx].user_id}}'>
+            <image src='{{others[idx].head_photo}}' mode='aspectFill'></image>
+        </view>
+        <view class='firstrow'>
+            {{others[idx].username}}
+            <view>VIP</view>
+            <image src='../../images/ico-hoted.png'></image><text>{{others[idx].heat}}</text>
+        </view> 
+        <view class='secondrow'>{{others[idx].label_name}}</view>
+        <view class='mains'>
+            <view style="position:relative;" id="{{others[idx].authorized_video}}" bindtap='showvideo'>
+                <image src='{{others[idx].videoconver}}' mode='aspectFill'></image>
+                <image src='../../images/play.png' style='width:70rpx;height:70rpx;position:absolute;left:50%;top:50%;transform: translate(-50%,-50%);'></image>
+            </view>
+            <view bindtap='handleImagePreview' id='{{others[idx].other}}' wx:for='{{others[idx].other}}' wx:for-index="idss" wx:for-key="item">
+                <image src='{{item}}' mode='aspectFill'></image>
+            </view>
+        </view>
+    </view>
+</view>
+
+
+
+<!-- 我要推广 -->
+<image src='../../images/actor_enter.png' class='iwillpromot floatbtn' catchtap='aenter'></image>
+
+
+<!-- 预览视频 -->
+<view class='mask' catchtouchmove='true' hidden='{{isvideo}}' catchtap='hidevideo'>
+</view>
+<video class='maskvideo' hidden='{{isvideo}}' src='{{play}}'></video>

@@ -1,0 +1,18 @@
+<view class="item clearfix" hidden='{{counts == 0}}' wx:for="{{data}}" wx:for-index="idx">
+    <view class="imgs">
+        <image src='{{data[idx].head_photo}}'></image>
+    </view>
+    <view class="name">
+        {{data[idx].phone}}
+        <view wx:if="{{data[idx].is_audit == 0}}">审核中</view>
+        <view wx:if="{{data[idx].is_audit == 2}}">审核驳回</view>
+    </view>
+    <view class="reason">
+        {{data[idx].username}}
+        <view class="color" wx:if="{{data[idx].is_audit == 2}}">原因：{{data[idx].audit_remarks}}</view>
+    </view>
+</view>
+<view class="none" hidden='{{counts != 0}}'>
+    <image src='../../images/sharenone.png'></image>
+    <view>当前暂无盟友申请~</view>
+</view>

@@ -1,0 +1,59 @@
+<view class="person clearfix" id="app">
+    <view class="headimg">
+        <image src='{{data.head_photo}}'></image>
+    </view>
+    <view class="pname">
+        {{data.username}}
+        <view wx:if="{{data.shareIdentityType == 1}}">盟主</view>
+        <view wx:else="{{data.shareIdentityType == 2}}">盟友</view>
+    </view>
+    <view class="pc">发展盟友：{{data.lowers}}人</view>
+    <view class="jointime">加入时间：{{data.joinShareDate}}</view>
+    <view class="sy">
+        <view>
+            <view>{{data.monthlyIncome}}</view>
+            <br />
+            <view>当月总收益</view>
+        </view>
+        <view>
+            <view>{{data.totalIncome}}</view>
+            <br />
+            <view>累计总收益</view>
+        </view>
+    </view>
+</view>
+<view class="litem showcode" bindtap='sharecode'>
+    <image src="../../images/s9.png" class="ico"></image> 共享二维码
+    <image src="../../images/enter.png" class="enter"></image>
+    <view>我的共享二维码</view>
+</view>
+<view class="litem fzmysq" bindtap='shengji'>
+    <image src="../../images/upgrade.png" class="ico"></image>升级成为盟主
+    <image src="../../images/enter.png" class="enter"></image>
+</view>
+<view class="litem zj" bindtap='torecord'>
+    <image src="../../images/s01.png" class="ico"></image> 共享战绩
+    <image src="../../images/enter.png" class="enter"></image>
+    <view>获得分润将存入钱包</view>
+</view>
+<view class="litem wddd" bindtap='myorder'>
+    <image src="../../images/s01.png" class="ico"></image> 我的订单
+    <image src="../../images/enter.png" class="enter"></image>
+    <view>获得分润将存入钱包</view>
+</view>
+<view class="litem sp wdmy" hidden='{{data.shareIdentityType == 2}}' bindtap='mymy'>
+    <image src="../../images/s02.png" class="ico"></image> 我的盟友
+    <image src="../../images/enter.png" class="enter"></image>
+</view>
+<view class="litem sp fzmy" hidden='{{data.shareIdentityType == 2}}' bindtap='fzmy'>
+    <image src="../../images/s03.png" class="ico"></image> 发展盟友
+    <image src="../../images/enter.png" class="enter"></image>
+</view>
+<view class="litem sp fzmysq" hidden='{{data.shareIdentityType == 2}}' bindtap='applying'>
+    <image src="../../images/s02.png" class="ico"></image>发展盟友申请
+    <image src="../../images/enter.png" class="enter"></image>
+</view>
+<view class="litem fzmysq" bindtap='syzn'>
+    <image src="../../images/znicon.png" class="ico"></image>使用指南
+    <image src="../../images/enter.png" class="enter"></image>
+</view>

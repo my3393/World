@@ -1,0 +1,11 @@
+<!--pages/bindphone/bindphone.wxml-->
+<view class="list">
+    <image src="../../images/phone.png" class="pi" />
+    <input type="number" class="phone" placeholder="请输入手机号" maxlength="11" placeholder-style='color:white' bindinput='getphone' ></input>
+</view>
+<view class="list">
+    <image src="../../images/yz-code.png" />
+    <input type="text" class="code" bindinput='getvcode' placeholder="请输入验证码" placeholder-style='color:white'></input>
+    <view type="button" class="obtain generate_code sendcode" readonly="readonly" bindtap='getcode' value=" 获取验证码">获取验证码</view>
+</view>
+<view class="sure" bindtap='bind'>立即绑定</view>

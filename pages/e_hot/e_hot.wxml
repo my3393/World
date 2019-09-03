@@ -1,0 +1,69 @@
+<view class='top'>
+<view class='rank clearfix'>
+      <view class='rankhead'>
+        <image src='{{players.competitionLogoOssPath}}'></image>
+      </view>
+      <view class='rankm'>{{players.competitionTitle}}</view>
+</view>
+   <view>
+       <view class='jie'>
+    <view class='heng'></view>
+     推广给更多用户
+    </view>
+    <view class='instr' bindtap='close'>说明</view>
+   </view>
+   <view class='mins'>推广时段</view>
+    <view style='margin-left: 16rpx;line-height: 80rpx;'>
+       <view class='ttim {{tar == idx?"active":""}}'  wx:for-index="idx" bindtap="tag" data-name='{{item.name}}' data-num='{{idx}}' wx:for='{{tag}}' wx:key='{{index}}'>{{item.name}}</view>
+    </view>
+   <view class='mins' style='margin-top: 100rpx;'>推广天数</view>
+   <view class='inpu'> (<input type='number' class='inp' bindinput='inputs'></input>) 
+    <view class='tina'>天</view>
+   </view>
+   <view class='mins' style='margin-top: 100rpx;'>推广地区</view>
+   <view class='inpu'> <input type='text' disabled='false' class='diq' bindtap='choose' value='{{name}}' placeholder='请选择推广地区'></input> </view>
+   <view class='xzdq'>已选 {{num}} 个地区</view>
+</view>
+<view class='tkos'>
+  <radio-group class="radio-group">
+    <label class="radio" catchtap='checked'>
+      <radio checked="{{checked}}" color='#e65099' v/>
+        <view class='mar'>我已阅读并同意</view> <view class='cole' catchtap='chak'>《服务协议》</view>
+    </label>
+  </radio-group>
+</view>
+<view class='footer'>
+   <view wx:if='{{price == ""}}'>--</view>
+   <view wx:else>{{price}}</view>
+   <view class='pay' bindtap='pay'>去支付</view>
+</view>
+
+<view class='mark' hidden='{{isshow}}'>
+  
+  <view class='markron'>
+   <view class='marktop'>上热门说明</view>
+  <view>
+    1、用户提交后，推广服务次日生效，推广服
+    务失效时间由推广天数来决定。</view>     
+
+<view>  2、推广1天，即全天24小时进行推广。</view>
+<view>3、该推广服务支付后不支持退款。</view>
+                        
+  </view>
+  <view class='close' bindtap='close'><image src='../../images/closed.png'></image> </view>
+</view>
+
+<!-- 地区选择 -->
+<view class='mask' hidden='{{showlabels}}'>
+    <view class='ilebels'>
+        <view class='tops'>
+            <text class='quxiao' bindtap='quxiao'>取消</text>
+            
+            <text class='sure' bindtap='sure'>确定</text>
+        </view>
+        <view class='ilablein'>
+            <text wx:for='{{players}}' data-name="{{item.region_name}}" data-index='{{idx}}' wx:for-index="idx" id='{{item.id}}' class='{{item.selected == false?"iact":""}}' bindtap='chooselabel'>{{item.region_name}}</text>
+        </view>
+        
+    </view>
+</view>

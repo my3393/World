@@ -1,0 +1,25 @@
+<view class="item">
+    <view>姓名</view>
+    <input type="text" placeholder="请输入您的真实姓名" class="name" bindinput='getname' />
+</view>
+<view class="item">
+    <view>手机号</view>
+    <input type="number" placeholder="请输入您的手机号" maxlength='11' value='{{phone}}'/>
+</view>
+<view class="item">
+    <view>身份证号</view>
+    <input type="text" placeholder="请输入您的身份证号" class="idcard" maxlength='18' bindinput='getcard' />
+</view>
+<view class="spitem">
+    <view style="color: #333333;">经纪人资格证</view>
+    <image src='{{posters}}' bindtap="chooseImage" class='fir'></image>
+</view>
+<view class="item">
+    <view style='float: left;'>经纪公司</view>
+    <view class='jjgs {{num == 1?"activesss":""}}' id='1' bindtap='showc'>经纪公司</view>
+    <view class='yrpy {{num == 2?"activesss":""}}' id='2' bindtap='showc'>艺人朋友</view>
+</view>
+<view class="item mc" hidden='{{ishow}}'>
+    <input type="text" placeholder="请填写公司名称" bindinput='getcompany' class="gsnm" style="text-align: left;" />
+</view>
+<view class="submit" bindtap='submit'>提交申请</view>

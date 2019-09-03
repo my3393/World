@@ -1,0 +1,75 @@
+<!--pages/build_xr/build_xr.wxml-->
+<view class='top_item'>
+    <text wx:for="{{data}}" wx:key="item" id='{{item.id}}' wx:for-index="idx" data-num='{{idx}}' class='{{ids == item.id?"bact":""}}' bindtap='selects'>{{item.title}}</text>
+</view>
+<!-- 新人入驻 -->
+<view class="wrap1" wx:if="{{ids == 4}}">
+    <view class="clearfix">
+        <image src='../../images/tg01.png' style="width: 100%;float: left;height: 272rpx;"></image>
+    </view>
+    <view class="clearfix">
+        <image src="../../images/sidfw.jpg" style="width: 100%;float: left;height: 76rpx;"></image>
+    </view>
+    <view class="jies">
+        <view class="clearfix jsitem">
+            <image src='../../images/ftg01.png'></image>
+            <view class="jtfirst">电梯广告推广</view>
+            <view class="jtsecond">任选投放区域50栋大楼电梯投放</view>
+        </view>
+        <view class="clearfix jsitem">
+            <image src='../../images/ftg02.png'></image>
+            <view class="jtfirst">电视广告曝光</view>
+            <view class="jtsecond">任选投放区域5万台家庭电视广告投放宣传</view>
+        </view>
+        <view class="clearfix jsitem">
+            <image src='../../images/ftg03.png'></image>
+            <view class="jtfirst">百度百科推广</view>
+            <view class="jtsecond">免费赠送百度百科推广服务</view>
+        </view>
+        <view class="clearfix jsitem">
+            <image src='../../images/ftg04.png'></image>
+            <view class="jtfirst">网络站点推广</view>
+            <view class="jtsecond">免费赠送100个网站宣传推广</view>
+        </view>
+    </view>
+</view>
+
+<!-- 新人打造 -->
+<view class="wrap1" wx:elif="{{ids == 5}}">
+    <view class="clearfix">
+        <image src='../../images/tg02.png' style="width: 100%;float: left;height: 272rpx;"></image>
+    </view>
+    <view class="clearfix">
+        <image src="../../images/sidfw.jpg" style="width: 100%;float: left;height: 76rpx;"></image>
+    </view>
+    <view class="jies">
+        <view class="clearfix jsitem">
+            <image src='../../images/stg01.png'></image>
+            <view class="jtfirst">十大主流媒体</view>
+            <view class="jtsecond">利用平台已有的媒体资源为您助力</view>
+        </view>
+        <view class="clearfix jsitem">
+            <image src='../../images/stg02.png'></image>
+            <view class="jtfirst">一百个行业网站</view>
+            <view class="jtsecond">相关行业网站投放宣传，全网铺开</view>
+        </view>
+        <view class="clearfix jsitem">
+            <image src='../../images/stg03.png'></image>
+            <view class="jtfirst">一百个行业论坛</view>
+            <view class="jtsecond">知名论坛，相关论坛的宣发</view>
+        </view>
+        <view class="clearfix jsitem">
+            <image src='../../images/stg04.png'></image>
+            <view class="jtfirst">一万抖音曝光</view>
+            <view class="jtsecond">超热门宣传渠道，让更多人知道</view>
+        </view>
+    </view>
+</view>
+
+<view class="pbottom clearfix">
+    <view class="apays">新人价：
+        <text class='pays'>{{tprice}}元</text>
+        <text class='smalls'>{{lprice}}元</text>
+    </view>
+    <view class="gopay" bindtap='pay'>前往支付</view>
+</view>

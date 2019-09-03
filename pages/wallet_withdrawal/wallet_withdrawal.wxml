@@ -1,0 +1,45 @@
+<!--pages/wallet_withdrawal/wallet_withdrawal.wxml-->
+<view class="top">
+     <view class="tix">
+       <image  src="../../images/withs.png" />
+     </view>
+     <view class="tis">
+       可提现余额（元）：<text class="banlan">{{userinfo.purse}}</text>
+     </view>
+</view>
+<view class="top2">
+   <view class="hr">提现金额</view>
+   <view class="nav">
+     <view class="tix">
+       <image  src="../../images/withs.png" />
+     </view>
+     <view class="tis">
+       <input type='number' placeholder="请输入提现金额(最少100)" value="{{valu}}" bindinput="valu"></input>
+       
+     </view>
+     <view class="all" bind:tap="all">全部提现</view>
+  </view>
+</view>
+
+<view class="top2">
+   <view class="hr">备注</view>
+   <view class="nav">
+     <view class="tix">
+       <image  src="../../images/beiz.png" />
+     </view>
+     <view class="tis">
+       <input type='text' placeholder=" 可选择填写支付宝账号进行提现"  bindinput="zfb"></input>
+       
+     </view>
+     
+  </view>
+</view>
+
+<view class="submit" bind:tap="submit">提交申请</view>
+
+<view class="list">
+  <view > 说明 </view>
+<view >1、若未备注，默认微信转账；</view>
+<view >2、提现申请提交后，7各工作日内到账。</view>
+                        
+</view>

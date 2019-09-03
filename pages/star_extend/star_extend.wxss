@@ -1,0 +1,183 @@
+/* pages/star_extend/star_extend.wxss */
+page{
+    background-color: #f0f0f0;
+}
+.titles{
+    width: 496rpx;
+    font-size: 34rpx;
+    color: #666666;
+    line-height: 34rpx;
+    margin-top: 70rpx !important;
+    margin-bottom: 48rpx !important;
+    margin: auto;
+    text-align: center;
+}
+.titles text{
+    display: inline-block;
+    border: 1rpx solid #dddddd;
+    width: 150rpx;
+    position: relative;
+    top: -10rpx;
+}
+.item{
+    width: 100%;
+    height: 400rpx;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20rpx;
+}
+.bimg{
+    width: 100%;
+    min-height: 400rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.item view{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    padding: 10rpx 20rpx;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-top-right-radius: 50%;
+    color: white;
+    font-size: 24rpx;
+}
+.item view image{
+    width: 22rpx;
+    height: 32rpx;
+    margin-left: 10rpx;
+    position: relative;
+    top: 8rpx;
+    margin-right: 10rpx;
+}
+.stitles{
+    font-size: 37rpx;
+    color: #333;
+    letter-spacing: rpx;
+    line-height: 110rpx;
+    padding: 0 21rpx;
+    box-sizing: border-box; 
+    background-color: white;
+    margin-top: 20rpx;
+}
+.wrap{
+    background-color: white;
+}
+.stitles text{
+    font-size: 26rpx;
+    float: right;
+}
+.fwrap{
+    width: 100%;
+    height: 368rpx;
+    background-color: white;
+    padding: 0 21rpx;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+.fwrap>view{
+    width: 250rpx;
+    margin-right: 21rpx;
+    display: inline-block;
+    position: relative;
+}
+.fwrap>view>view{
+    width: 100%;
+    margin-top: 10rpx;
+    font-size: 26rpx;
+    color: #666666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+}
+.fwrap image{
+    width: 250rpx;
+    height: 250rpx;
+}
+.service{
+    width: 100%;
+    height: 184rpx;
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    font-size: 28rpx;
+    color: #333;
+    padding-top: 20rpx;
+    box-sizing: border-box;
+    letter-spacing: 2rpx;
+}
+.service>view{
+    text-align: center;
+}
+.service>view image{
+    width: 100rpx;
+    height: 100rpx;
+}
+
+
+.nav{
+  background: #fff;
+}
+.hs{
+  margin-left: 20rpx;
+  line-height: 70rpx;
+  font-size: 30rpx;
+
+}
+.tui{
+  width: 100%;
+  height: 350rpx;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+.tui image{
+  width: 100%;
+  height: 100%;
+}
+.ttop{
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  color: #e65099;
+  font-size: 26rpx;
+
+}
+.zhi{
+  margin-right: 15rpx;
+}
+.bott{
+  background: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 60rpx;
+  line-height: 60rpx;
+  width: 100%;
+  color: #fff;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+.l-bott{
+  float: left;
+}
+.r-bott{
+  float: right;
+}
+.rd{
+  width: 30rpx;
+  height: 36rpx;
+  display: inline-block;
+  vertical-align: top;
+}
+.rd image{
+  width: 100%;
+  height: 100%;
+  
+}

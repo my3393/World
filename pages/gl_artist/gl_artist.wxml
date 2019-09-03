@@ -1,0 +1,13 @@
+<view class="progress" bindtap='enter_jd'>艺人入驻进度
+    <image src='../../images/enter.png'></image>
+</view>
+<view id="app">
+    <view class="item clearfix" wx:for="{{data}}" wx:key="item">
+        <view class="img">
+            <image src='{{item.head_photo}}'></image>
+        </view>
+        <view class="name">{{item.username}}</view>
+        <view class="uid">ID:{{item.id}}</view>
+        <!-- <view class="order_center" id="item.user_id">订单中心</view> -->
+    </view>
+</view>

@@ -1,0 +1,153 @@
+/* pages/mines/mines.wxss */
+page{
+  background: #f2f2f2;
+  color: #333333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.top{
+  background: #FF5CAB;
+  width: 100%;
+  height: 400rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.rank_head{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  vertical-align: middle;
+  margin-right: 25rpx;
+  display: inline-block;
+}
+.rank_head image{
+  width: 100%;
+  height: 100%;
+}
+.rank_name{
+  display: inline-block;
+  vertical-align: middle;
+  color: #fff;
+}
+.top_bot{
+  width: 100%;
+  height: 150rpx;
+  background: #fff;
+  margin-top: 30rpx;
+  border-radius: 20rpx;
+  box-shadow: 2rpx 6px 12px #333;
+  box-sizing: border-box;
+  padding: 20rpx;
+  line-height: 50rpx;
+}
+.bot_one{
+  display: inline-block;
+  text-align: center;
+}
+.bot_hen{
+  display: inline-block;
+  margin: 0 50rpx;
+  width: 2rpx;
+  height: 50rpx;
+  background: #DDDDDD;
+}
+.fan{
+  font-size: 26rpx;
+  color: #999999;
+}
+.bot-y{
+  width: 180rpx;
+  height: 65rpx;
+  background: #FFE7F2;
+  color: #FF5CAB;
+  font-size: 30rpx;
+  line-height: 65rpx;
+  text-align: center;
+  float:right;
+  border-radius: 38rpx;
+  margin-top: 20rpx;
+}
+
+.l-head{
+  background: #ffffff;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  
+}
+.l-head>view{
+  float: left;
+}
+.l-rz view:nth-child(1) {
+   font-size: 30rpx;
+  color: #333;
+}
+.l-rz view:nth-child(2) {
+  margin-top: 8rpx;
+   font-size: 24rpx;
+   color: #666;
+}
+.l-head-rz{
+  box-sizing: border-box;
+  width: 50%;
+  position: relative;
+}
+.l-head-rz image{
+  position: absolute;
+  right: 20rpx;
+  top: 10rpx;
+  width: 78rpx;
+  height: 78rpx;
+}
+
+.mitem{
+	line-height: 120rpx;
+	padding-left: 24rpx;
+	box-sizing: border-box;
+	border-bottom: 2rpx solid #E6E6E6;
+}
+.mitem view{
+    display: inline-block;
+}
+.mitem image{
+	width: 42rpx;
+  height: 42rpx;
+	vertical-align: middle;
+	position: relative;
+	top: -2rpx;
+	margin-right: 10rpx;
+}
+.mitem{
+	font-size: 28rpx;
+	background-color: white;
+	color: #333333;
+}
+.allrm{
+	float: right;
+  width: 16rpx;
+  height: 26rpx;
+  margin-right: 20rpx;
+}
+.allrm image{
+	width: 100%;
+  height: 100%;
+	vertical-align: middle;
+}
+.kfs{
+  position: relative;
+}
+.kf{
+  position: absolute;
+  right: -170rpx;
+  top: -2rpx;
+  width: 16rpx;
+  height: 26rpx;
+}
+.kf image{
+  width: 100%;
+  height: 100%;
+}
+.last{
+  border: 0;
+}

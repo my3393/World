@@ -1,0 +1,98 @@
+<!--pages/submit_notice/submit_notice.wxml-->
+<view class='wrap'>
+    <view class='title'>通告标题：</view>
+    <textarea placeholder='标题：用一句话简述通告的主题（15字内）' bindinput='geititle' maxlength='15'></textarea>
+</view>
+<view class='wrap'>
+    <view class='title'>通告海报：</view>
+    <image src='{{posters}}' bindtap="chooseImage" ></image>
+</view>
+<view class='wrap'>
+    <view class='title'>通告详情：</view>
+    <textarea placeholder='请详细介绍通告详情（500字内）' bindinput='getdetail' maxlength='500' style='height: 200rpx;'></textarea>
+</view>
+<view class='wrap'>
+    <view class='snitem'>
+        艺人类型：
+        <picker bindchange="setlebel" class='snlabels' value="{{label[lindex].label_id}}" data-selecthx="{{label[lindex].label_name}}" range="{{label}}" range-key="{{'label_name'}}">
+            <view class="picker">
+                {{label[lindex].label_name}}
+            </view>
+        </picker>
+    </view>
+    <view class="section snitem" style='border-bottom:0;'>
+        价格预算：
+        <picker bindchange="setprice" class='snlabels' value="{{price[pindex].min_price}}" data-selecthx="{{price[pindex].max_price}}" range="{{price}}" range-key="{{'showrange'}}">
+            <view class="picker">
+                {{price[pindex].min_price+'~'}}{{price[pindex].max_price}}
+            </view>
+        </picker>
+    </view>
+</view>
+<view class='wrap'>
+    <view class="section snitem">
+        开始时间：
+        <picker mode="date" value="{{startdate}}" start="{{mrdate}}" bindchange="bindDateChange" class='snlabels'>
+            <view class="picker">
+                {{startdate}}
+            </view>
+        </picker>
+    </view>
+    <view class="section snitem" style='border-bottom:0;'>
+        结束时间：
+        <picker mode="date" value="{{enddate}}" start="{{startdate}}" bindchange="bindDateChange1" class='snlabels'>
+            <view class="picker">
+                {{enddate}}
+            </view>
+        </picker>
+    </view>
+</view>
+<view class='wrap'>
+    <view class="section snitem">
+        省：
+        <picker bindchange="setprovince" class='snlabels' value="{{province[poindex].id}}" data-selecthx="{{province[poindex].region_name}}" range="{{province}}" range-key="{{'region_name'}}">
+            <view class="picker">
+                {{province[poindex].region_name}}
+            </view>
+        </picker>
+    </view>
+    <view class="section snitem" hidden='{{sshi}}'>
+        市：
+        <picker bindchange="setcity" class='snlabels' value="{{city[cindex].id}}" data-selecthx="{{city[cindex].region_name}}" range="{{city}}" range-key="{{'region_name'}}">
+            <view class="picker">
+                {{city[cindex].region_name}}
+            </view>
+        </picker>
+    </view>
+    <view class="section snitem" hidden='{{squ}}'>
+        区：
+        <picker bindchange="setarea" class='snlabels' value="{{area[aindex].id}}" data-selecthx="{{area[aindex].region_name}}" range="{{area}}" range-key="{{'region_name'}}">
+            <view class="picker">
+                {{area[aindex].region_name}}
+            </view>
+        </picker>
+    </view>
+    <view class="section snitem" style='border-bottom:0;' hidden='{{sjie}}'>
+        街道：
+        <picker bindchange="settown" class='snlabels' value="{{town[tindex].id}}" data-selecthx="{{town[tindex].region_name}}" range="{{town}}" range-key="{{'region_name'}}">
+            <view class="picker">
+                {{town[tindex].region_name}}
+            </view>
+        </picker>
+    </view>
+</view>
+<view class='wrap'>
+    <view class='title'>详细地址：</view>
+    <textarea placeholder='请输入详细地址' bindinput='getdetailaddr' maxlength='30'></textarea>
+</view>
+<view class='wrap'>
+    <view class='snitem'>
+        联系电话：
+        <input type='number' class='snlabels' adjust-position='{{true}}' style='width:auto;' bindinput='getphone' placeholder='请输入联系电话'></input>
+    </view>
+    <view class='snitem' style='border-bottom: 0;'>
+        微<text style='color: white;'>空空</text>信：
+        <input class='snlabels' adjust-position='true' style='width:auto;height:70rpx;' bindinput='getwx' placeholder='请输入联系微信'></input>
+    </view>
+</view>
+<view class='subnotice' bindtap='subnotice'>发布通告</view>

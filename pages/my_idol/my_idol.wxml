@@ -1,0 +1,145 @@
+<!--pages/my_idol/my_idol.wxml-->
+<!-- 默认无偶像 -->
+<view class="default" hidden='{{defaults}}'>
+    <view class="one">
+        <image src="../../images/noidol.png"></image>
+        <view class="otip">混娱乐圈，怎能没偶像</view>
+        <view class="ostip">快去寻找你的偶像吧~</view>
+    </view>
+    <!--搜索结果-->
+    <view class="two">
+        <view class="twtit">
+            <view>明星偶像</view>
+            <input id="search" type="search" placeholder="输个名字试试" bindinput='search' bindconfirm='wancheng' bindblur='sqjd' />
+        </view>
+        <!--搜索结果为空-->
+        <view class="search-none" hidden='{{hasidol}}'>
+            <image src="../../images/nosj.png"></image>
+            <view class="stip">
+                居然没有，换个词试试~
+            </view>
+        </view>
+        <!--list-->
+        <view class="list clearfix" hidden='{{!hasidol}}'>
+            <view class="item" catchtap="todetail" wx:for='{{artist}}' wx:for-index='idx' id='{{artist[idx].user_id}}'>
+                <image mode='aspectFill' src="{{artist[idx].head_photo}}"></image>
+                <view class="iname">{{artist[idx].username}}</view>
+                <view class="set" id="{{artist[idx].user_id}}" data-name='{{artist[idx].username}}' catchtap='setidol'>设为偶像</view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<!-- 偶像详情页 -->
+
+<view class="wrap" hidden='{{!defaults}}'>
+    <!-- banner -->
+    <swiper class="banner" indicator-dots="true" indicator-color="#fe5ba9" indicator-active-color="#a7a7a7">
+        <block>
+            <swiper-item>
+                <video style='width:100%;height:100%;' src='{{datas.authorized_video}}' poster='{{datas.videoconver}}' objectFit="cover"></video>
+            </swiper-item>
+        </block>
+        <block wx:for="{{banner}}" wx:for-index="idx">
+            <swiper-item>
+                <image mode='aspectFill' class="banner_img" src="{{banner[idx]}}"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="yybtn">
+        <view class="yuyeu" bindtap='yuyue'>在线预约</view>
+    </view>
+    <view class="heads">
+        <view class="uimg">
+            <image src='{{datas.head_photo}}'></image>
+        </view>
+        <view class="vuname">{{datas.username}}
+            <view wx:if="datas.vip_type != 0">VIP</view>
+        </view>
+        <view class="vjob">{{datas.label_name}}</view>
+        <!-- <view class="sec-gz">关注</view> -->
+        <view class="three">
+            <view>
+                <image src="../../images/grd.png" style='width: 27rpx;'></image>{{datas.heat}}</view>
+            <view>
+                <image src="../../images/ggz.png" style='width: 40rpx;'></image>{{datas.fans}}</view>
+            <view>
+                <image src="../../images/zan@2x.png" style='width: 38rpx;'></image>{{datas.thumbs}}</view>
+        </view>
+    </view>
+    <view class="title">
+        作品展示
+    </view>
+    <view class="detail" style='border-bottom: 20rpx solid #f0f0f0;' wx:if="{{datas.work_display == null}}">暂无个人作品</view>
+    <view class="detail" style='border-bottom: 20rpx solid #f0f0f0;' wx:elif="{{datas.work_display == ''}}">暂无个人作品</view>
+    <view class="detail" style='border-bottom: 20rpx solid #f0f0f0;' wx:else>{{datas.work_display}}</view>
+    <view class="menu" style="margin-bottom: 0 !important;">
+        <view class="active dongt {{num==1?'iactive':''}}" bindtap='changes' data-num='1'>动态</view>
+        <view class="persal {{num==2?'iactive':''}}" bindtap='changes' data-num='2'>个人信息</view>
+    </view>
+    <!--动态-->
+    <view class="dongtai" hidden='{{isshowdt}}'>
+        <!--动态为空显示-->
+        <view class="dt-none" hidden='{{dtnone}}'>
+            <image src='../../images/foot.png'></image>
+            <view class="dt-tip">ta还没有发布动态哦~</view>
+        </view>
+        <view hidden='{{!dtnone}}'>
+            <view class="vip-dt clearfix" wx:for="{{alldata}}" wx:for-index='idx'>
+                <view class="uimg" style='width: 80rpx;height: 80rpx;'>
+                    <image src="{{alldata[idx].head_photo}}"></image>
+                </view>
+                <view class="vjobs">{{alldata[idx].username}}
+                    <view>{{alldata[idx].create_date}}</view>
+                </view>
+                <view class="details" style='margin-bottom: 20rpx;'>
+                    {{alldata[idx].content}}
+                </view>
+                <view class='dtwrap'>
+                    <view class="dtimg" wx:for="{{alldata[idx].dtvideo}}" wx:for-index="vidx" style='position:relative;'>
+                        <video controls="{{false}}" show-center-play-btn="{{false}}" show-play-btn="{{false}}" style='width:100%;height:100%;z-index:12;position:absolute;top:0;left:0;' src='{{alldata[idx].dtvideo[vidx]}}' objectFit="cover"></video>
+                        <view bindtap='showvideo' id='{{alldata[idx].dtvideo[vidx]}}' class='zz' style='width: 100%;height:100%;position: absolute;top:0;left:0;background-color:transparent;z-index:22;'></view>
+                    </view>
+                    <view class="dtimg" wx:for="{{alldata[idx].dtimg}}" wx:for-index="iidx">
+                        <image src="{{alldata[idx].dtimg[iidx]}}"></image>
+                    </view>
+                </view>
+                <view class="jis">
+                    <view>
+                        <image src="../../images/zan@2x.png"></image>36</view>
+                    <view>
+                        <image src="../../images/pl.png"></image>22</view>
+                </view>
+            </view>
+            <view class="seemore" bindtap='seemore'>查看更多艺人动态，前往App>></view>
+        </view>
+    </view>
+    <!--个人信息-->
+    <view class="person" hidden='{{!isshowdt}}'>
+        <view class="title" style="margin-top: 0;border: 0;">
+            个人信息
+        </view>
+        <view class="detail" wx:if="{{datas.artist_introduce == null}}">暂无个人信息</view>
+        <view class="detail" wx:elif="{{datas.artist_introduce == ''}}">暂无个人信息</view>
+        <view class="detail" wx:else>{{datas.artist_introduce}}</view>
+        <view class="twos">
+            <view wx:if="{{datas.provincename == null}}">城市：--</view>
+            <view wx:elif="{{datas.provincename == ''}}">城市：--</view>
+            <view wx:else>城市：{{datas.provincename}}-{{datas.cityname}}</view>
+            <view wx:if="{{datas.height == null}}">身高：--</view>
+            <view wx:elif="{{datas.height == ''}}">身高：--</view>
+            <view wx:else>身高：{{datas.height}}CM</view>
+        </view>
+        <view class="twos">
+            <view wx:if="{{datas.weight == null}}">体重：--</view>
+            <view wx:elif="{{datas.weight == ''}}">体重：--</view>
+            <view wx:else>体重：{{datas.weight}}KG</view>
+            <view wx:if="{{datas.dimensions == null}}">三围：--</view>
+            <view wx:elif="{{datas.dimensions == ''}}">三围：--</view>
+            <view wx:else>三围：{{datas.dimensions}}CM</view>
+        </view>
+    </view>
+</view>
+<view class='mask' hidden='{{isvideo}}' catchtap='hidevideo'>
+</view>
+<video class='maskvideo' hidden='{{isvideo}}' src='{{play}}'></video>

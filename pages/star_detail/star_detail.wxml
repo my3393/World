@@ -1,0 +1,68 @@
+<!--pages/star_detail/star_detail.wxml-->
+<!-- banner -->
+<swiper class="banner" indicator-dots="true" autoplay="true" duration="1000" indicator-color="#a7a7a7" indicator-active-color="#fe5ba9">
+    <block wx:for="{{banner}}" wx:for-index="idx">
+        <swiper-item>
+            <image class="banner_img" src="{{banner[idx].file_path}}"></image>
+        </swiper-item>
+    </block>
+</swiper>
+<!-- wrap -->
+<view class='item' style='height: 220rpx;border-bottom: 1px solid #ddd;'>
+    <view class='headimg' style='width: 133rpx;height: 133rpx;' wx:if='{{datas.photo == null}}'>
+        <image src='../../images/head.jpg'></image>
+    </view>
+    <view class='headimg' style='width: 133rpx;height: 133rpx;' wx:elif='{{datas.photo == ""}}'>
+        <image src='../../images/head.jpg'></image>
+    </view>
+    <view class='headimg' style='width: 133rpx;height: 133rpx;' wx:else>
+        <image src='{{datas.photo}}'></image>
+    </view>
+    <view class='uname' style='font-size: 34rpx;margin-bottom: 16rpx;'>
+        {{datas.name}}
+    </view>
+    <view class='time'>
+        职业：
+        <text wx:if="{{datas.occupation == null}}">--</text>
+        <text wx:elif="{{datas.occupation == ''}}">--</text>
+        <text wx:else>{{datas.occupation}}</text> /
+        籍贯：
+        <text wx:if="{{datas.homeplace == null}}">--</text>
+        <text wx:elif="{{datas.homeplace == ''}}">--</text>
+        <text wx:else>{{datas.homeplace}}</text> / 
+        民族：
+        <text wx:if="{{datas.nation == null}}">--</text>
+        <text wx:elif="{{datas.nation == ''}}">--</text>
+        <text wx:else>{{datas.nation}}</text> /
+        星座：
+        <text wx:if="{{datas.constellation == null}}">--</text>
+        <text wx:elif="{{datas.constellation == ''}}">--</text>
+        <text wx:else>{{datas.constellation}}</text> / 
+        身高：
+        <text wx:if="{{datas.height == null}}">--</text>
+        <text wx:elif="{{datas.height == ''}}">--</text>
+        <text wx:else>{{datas.height}}</text>cm
+    </view>
+</view>
+<view class='notice-detail'>
+    <text>简介</text>
+    <view wx:if="datas.personal_profile == null">
+        {{datas.personal_profile}}
+    </view>
+    <view wx:elif="datas.personal_profile == ''">
+        {{datas.personal_profile}}
+    </view>
+    <view wx:else>
+        {{datas.personal_profile}}
+    </view>
+    <text style='margin-top: 50rpx;'>个人作品</text>
+    <view wx:if="datas.personal_works == null">
+        暂无个人作品介绍
+    </view>
+    <view wx:elif="datas.personal_works == ''">
+        暂无个人作品介绍
+    </view>
+    <view wx:else>
+        {{datas.personal_works}}
+    </view>
+</view>

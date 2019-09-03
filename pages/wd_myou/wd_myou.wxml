@@ -1,0 +1,25 @@
+<view hidden='{{counts == 0}}'>
+    <view class="item clearfix" wx:for='{{data}}' wx:for-index="idx">
+        <view class="imgs">
+            <image src='{{data[idx].head_photo}}'></image>
+        </view>
+        <view class="name">{{data[idx].username}}</view>
+        <view class="shouyi">为我创造收益：{{data[idx].sharePrice}}</view>
+        <view class="remove" id='{{data[idx].userId}}' bindtap='removes'>移除</view>
+    </view>
+</view>
+<!--弹窗-->
+<view class="mask" hidden='{{ishow}}'>
+    <view class="spopups">
+        <image src="../../images/popico.png" ></image>
+        <view class="sptip">确定将此盟友移除？</view>
+        <view class="shother">
+            <view class="quxiao" bindtap='quxiao'>取消</view>
+            <view class="sure" bindtap='sure'>确定</view>
+        </view>
+    </view>
+</view>
+<view class="none" hidden='{{counts != 0}}'>
+    <image src='../../images/sharenone.png'></image>
+    <view>当前暂无盟友~</view>
+</view>

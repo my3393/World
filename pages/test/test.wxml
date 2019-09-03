@@ -1,0 +1,7 @@
+<!--户型  -->
+      <picker value="{{pic_array[hx_index].id}}" data-selecthx="{{pic_array[hx_index].name}}" range="{{pic_array}}" range-key="{{'name'}}"  bindchange="bindPickerChange_hx"  >
+        <view class="picker" >
+         {{pic_array[hx_index].name}}
+        </view>
+      </picker>
+      <view bindtap='a'>aaa</view>

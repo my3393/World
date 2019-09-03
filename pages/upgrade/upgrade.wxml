@@ -1,0 +1,6 @@
+<image src="../../images/share_bg.png" style="width: 100%;"></image>
+<view style="margin-top: 10px;font-size: 30rpx;color: #333333;letter-spacing: 2rpx;text-align: center;font-weight: bold;margin-bottom: 34rpx;">您已获得免费升级成为盟主的资格</view>
+<view style="font-size: 30rpx;color: #333333;letter-spacing: 2rpx;text-align: center;margin-bottom: 34rpx;">盟主靓点：</view>
+<view style="font-size: 24rpx;color: #333333;letter-spacing: 2rpx;text-align: center;margin-bottom: 34rpx;">1、盟主产生的共享业务员订单分润提升至25%</view>
+<view style="font-size: 24rpx;color: #333333;letter-spacing: 2rpx;text-align: center;margin-bottom: 60rpx;">2、盟主可不限制发展下级盟友</view>
+<view class="submit" style='width: calc(100% - 70rpx);margin-left: 35rpx;line-height: 100rpx;border-radius: 100rpx;text-align: center;background-color: #FF5CAB;color: white;margin-bottom: 60rpx;' bindtap='sj'>立即升级</view>

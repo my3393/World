@@ -1,0 +1,29 @@
+<!-- pages/wallet_detail/wallet_detail.wxml -->
+<view wx:if="{{id == 1}}">
+  <view wx:if="{{blance.length == ''}}" class="wu">暂无提现记录</view>
+  <view wx:else>
+    <view class="nav" wx:for="{{blance}}" wx:key="{{index}}">
+      <view class="intor">提现</view>
+      <view class="right">{{item.amount}}</view>
+      <view>
+        <view class="timd">{{item.createDate}}</view>
+        <view class="yuans" wx:if="{{item.status == 0}}">待处理</view>
+        <view class="yuans" wx:if="{{item.status == 1}}">提现成功</view>
+        <view class="yuans" wx:if="{{item.status == 2}}">提现失败：{{item.remarks}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{id == 2}}">
+  <view class="wu" wx:if="{{integral.length == ''}}"></view>
+  <view>
+    <view class="nav" wx:for="{{integral}}" wx:key="{{index}}">
+      <view class="intor">{{item.integralInfo}}</view>
+      <view class="right" wx:if="{{item.type == 1}}">+{{item.integral}}</view>
+      <view class="right" wx:if="{{item.type == 2}}">-{{item.integral}}</view>
+      <view>
+        <view class="timd">{{item.create_date}}</view>
+      </view>
+    </view>
+  </view>
+</view>

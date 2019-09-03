@@ -1,0 +1,78 @@
+<!--pages/yl_online/yl_online.wxml-->
+<view class='types'>
+    <view wx:for="{{dfee}}" wx:for-index="idx" data-num='{{idx}}' data-minprice='{{dfee[idx].min_price}}' data-maxprice='{{dfee[idx].max_price}}' id='{{dfee[idx].label_id}}' bindtap='choosefee' class='{{num == idx?"yact":""}}'>{{dfee[idx].label_name}}</view>
+</view>
+<view class='ccfee'>
+    出场费：{{price}}
+</view>
+<view class='wrap'>
+    <view class='title'>活动主题：</view>
+    <input placeholder='请填写活动主题' bindinput='geititle' maxlength='15'></input>
+</view>
+<view class='wrap'>
+    <view class="section snitem">
+        开始时间：
+        <picker mode="date" value="{{startdate}}" start="{{mrdate}}" bindchange="bindDateChange" class='snlabels'>
+            <view class="picker">
+                {{startdate}}
+            </view>
+        </picker>
+    </view>
+    <view class="section snitem" style='border-bottom:0;'>
+        结束时间：
+        <picker mode="date" value="{{enddate}}" start="{{startdate}}" bindchange="bindDateChange1" class='snlabels'>
+            <view class="picker">
+                {{enddate}}
+            </view>
+        </picker>
+    </view>
+</view>
+
+<view class='wrap'>
+    <view class="section snitem">
+        省：
+        <picker bindchange="setprovince" class='snlabels' value="{{province[poindex].id}}" data-selecthx="{{province[poindex].region_name}}" range="{{province}}" range-key="{{'region_name'}}">
+            <view class="picker">
+                {{province[poindex].region_name}}
+            </view>
+        </picker>
+    </view>
+    <view class="section snitem" hidden='{{sshi}}'>
+        市：
+        <picker bindchange="setcity" class='snlabels' value="{{city[cindex].id}}" data-selecthx="{{city[cindex].region_name}}" range="{{city}}" range-key="{{'region_name'}}">
+            <view class="picker">
+                {{city[cindex].region_name}}
+            </view>
+        </picker>
+    </view>
+    <view class="section snitem" hidden='{{squ}}'>
+        区：
+        <picker bindchange="setarea" class='snlabels' value="{{area[aindex].id}}" data-selecthx="{{area[aindex].region_name}}" range="{{area}}" range-key="{{'region_name'}}">
+            <view class="picker">
+                {{area[aindex].region_name}}
+            </view>
+        </picker>
+    </view>
+    <view class="section snitem" style='border-bottom:0;' hidden='{{sjie}}'>
+        街道：
+        <picker bindchange="settown" class='snlabels' value="{{town[tindex].id}}" data-selecthx="{{town[tindex].region_name}}" range="{{town}}" range-key="{{'region_name'}}">
+            <view class="picker">
+                {{town[tindex].region_name}}
+            </view>
+        </picker>
+    </view>
+</view>
+<view class='wrap'>
+    <view class='title'>详细地址：</view>
+    <textarea placeholder='请输入详细地址' bindinput='getdetailaddr' maxlength='30'></textarea>
+</view>
+<view class='wrap'>
+    <view class='title'>客户预算：</view>
+    <input placeholder='请设置出场费用' type='text' bindinput='getfees' maxlength='15'></input>
+</view>
+<view class='wrap'>
+    <view class='title'>预付百分比：</view>
+    <input placeholder='请填写预付百分比' type='text' bindinput='getpersent' maxlength='15'></input>
+</view>
+
+<view class='subnotice' bindtap='subyl'>立即预约</view>

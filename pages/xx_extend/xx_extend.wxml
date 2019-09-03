@@ -1,0 +1,23 @@
+<view class="wrap">
+    <view class="wrap1">
+        <view class="clearfix">
+            <image src='../../images/xx01.png' style="width: 100%;float: left;height: 272rpx;"></image>
+        </view>
+        <view class="tits">请选择服务类型</view>
+        <view class="jies">
+            <view class="clearfix jsitem" wx:for="{{data}}" wx:for-index="idx" wx:key="item" id='{{item.id}}' data-num='{{idx}}' bindtap='selects'>
+                <image src="{{item.content}}" ></image>
+                <view class="jtfirst">{{item.title}}
+                    <image src='../../images/hd_hook.png' class="hook {{item.id == num?'hids':''}}"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="pbottom clearfix">
+    <view class="apays">新人价：
+        <text class='pays'>{{tprice}}元</text>
+        <text class='smalls'>{{lprice}}元</text>    
+    </view>
+    <view class="gopay" bindtap='pay'>前往支付</view>
+</view>

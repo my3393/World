@@ -1,0 +1,12 @@
+<view class="top_item">
+    <view id="1" class='{{num == 1?"tact":""}}' bindtap='changes'>待审核</view>
+    <view id='2' class='{{num == 2?"tact":""}}' bindtap='changes'>已通过</view>
+    <view id='3' class='{{num == 3?"tact":""}}' bindtap='changes'>未通过</view>
+</view>
+
+
+<view class="eitem" wx:for="{{data}}" wx:key="item">
+    <view class="uname">{{item.name}}</view>
+    <view class="time">提交时间：{{item.artist_date}}</view>
+    <view class="reason" hidden="{{item.artist_audit_failse == null}}">原因：{{item.artist_audit_failse}}</view>
+</view>

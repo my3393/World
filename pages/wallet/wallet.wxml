@@ -1,0 +1,75 @@
+<!--pages/wallet/wallet.wxml-->
+<view class="itwm">
+   <view class="wallet" >
+     <image src="../../images/beij.png" />
+   </view>
+   <view class="intor">
+     <view >余额</view>
+     <view class="money">
+         <view class="mone"><text style='font-size:48rpx;'>{{userinfo.purse}}</text> 元</view>
+         <view class="hen"></view>
+         <view class="mone-intor">
+            <view class="tex" bind:tap="withdrawal">
+              <view class="int-img">
+                <image src="../../images/tix.png" />
+              </view>
+              <view >提现</view>
+            </view>
+            <view class="tex" bind:tap="detail" id="{{1}}">
+              <view class="int-img">
+                <image src="../../images/szmx.png" />
+              </view>
+              <view >收支明细</view>
+            </view>
+         </view>
+     </view>
+   </view>
+  
+</view>
+<view class="itwm">
+   <view class="wallet" >
+     <image src="../../images/beij.png" />
+   </view>
+  <view class="intor">
+     <view >艺呗</view>
+     <view class="money">
+         <view class="mone"><text style='font-size:48rpx;'>{{userinfo.integral}}</text> 币</view>
+         <view class="hen"></view>
+         <view class="mone-intor">
+            <view class="tex" bind:tap="close">
+              <view class="int-img">
+                <image src="../../images/txsm.png" />
+              </view>
+              <view >说明</view>
+            </view>
+            <view class="tex">
+              <view class="int-img" bind:tap="detail" id="{{2}}">
+                <image src="../../images/szmx.png" />
+              </view>
+              <view >收支明细</view>
+            </view>
+         </view>
+     </view>
+  
+   </view>
+  
+</view>
+
+<view class='mark' hidden='{{isshow}}'>
+  
+  <view class='markron'>
+   <view class='marktop'>艺呗说明</view>
+  <view> 1. 来源：在本平台内消费现金均可获得对
+应比例的艺呗。 </view>     
+
+<view>2. 消耗：在本平台的配套商城内购买商
+品，投放广告、UP+付费推广等付费服
+务，均可抵扣现金使用，抵扣金额以页面
+显示为准。</view>
+
+                        
+  </view>
+  <view class='close' bindtap='close'><image src='../../images/closed.png'></image> </view>
+</view>
+
+ 

@@ -1,0 +1,2 @@
+<!--pages/peitao/peitao.wxml-->
+<web-view src="{{srcs}}"></web-view>

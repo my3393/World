@@ -1,0 +1,14 @@
+<view class="wrap">
+			<view class="himg">
+                <image src='{{data.head_photo}}' mode='aspectFill'></image>
+			</view>
+			<view class="name">{{data.username}}</view>
+			<view class="labelss" wx:if="{{data.label_name != null}}">{{data.label_name}}</view>
+			<view class="codes">
+				<image src='{{imggs}}'></image>
+				<view id="qrcode" style="width: 200rpx;height: 200rpx;position: absolute;top: 80rpx;left: 80rpx;"></view>
+			</view>
+			<view class="tipssss" >扫二维码，前往在线预约我~</view>
+		</view>
+
+    <view class='cun' bindtap='saveImage'>保存到相册</view>

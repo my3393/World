@@ -1,0 +1,48 @@
+<view class='top'>
+<view class='rank clearfix'>
+      <view class='rankhead'>
+        <image src='{{banner.headPhotoOssPath}}'></image>
+      </view>
+      <view class='rankm'>{{players.userName}}</view>
+</view>
+   <view>
+       <view class='jie'>
+    <view class='heng'></view>
+      推广站置顶
+    </view>
+    <view class='instr' bindtap='close'>说明</view>
+   </view>
+    <view>
+        <view class='choo clearfix'>置顶价格 -</view>
+        <view class='prices'>￥{{topPrice}}元</view>
+        <view class='li clearfix'>立即生效</view>
+    </view>
+    
+    
+  </view>
+  <view class='agree'>
+  <radio-group class="radio-group">
+    <label class="radio" catchtap='checked'>
+      <radio checked="{{checked}}" color='#e65099' v/>
+                            我已阅读并同意
+                        <text class='cole' catchtap='chak'>《服务协议》</text>
+    </label>
+  </radio-group>
+</view>
+<view class='pay' bindtap='pay'>去支付</view>
+
+<view class='mark' hidden='{{isshow}}'>
+  
+  <view class='markron'>
+   <view class='marktop'>UP+置顶说明</view>
+  <view> 1、用户提交后，推广服务次日生效。
+    </view>     
+
+<view>2、特别提醒：后置顶的推广用户会显示在先置顶的用户前面。
+ </view>
+<view>3、该推广服务支付后不支持退款。</view>
+                        
+  </view>
+  
+  <view class='close' bindtap='close'><image src='../../images/closed.png'></image> </view>
+</view>

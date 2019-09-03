@@ -1,0 +1,99 @@
+page {
+    padding: 40rpx 20rpx 0 20rpx;
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+}
+
+.tit {
+    font-size: 30rpx !important;
+    color: #333 !important;
+    font-weight: 600 !important;
+    letter-spacing: 2rpx !important;
+    margin-bottom: 30rpx;
+}
+
+view {
+    font-size: 26rpx;
+    margin-bottom: 30rpx;
+    color: #666;
+    line-height: 40rpx;
+    letter-spacing: 2rpx;
+}
+
+.xsmf {
+    position: absolute;
+    top: -44rpx;
+    left: -100rpx;
+    width: 60% !important;
+    height: 120rpx !important;
+}
+
+.submit {
+    width: 100%;
+    line-height: 100rpx;
+    font-size: 36rpx;
+    color: white;
+    letter-spacing: 2rpx;
+    background-color: #ff5cab;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.threes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.threes>view {
+    width: 33.333%;
+}
+
+.threes>view>view {
+    width: 94%;
+    margin-left: 3%;
+    background-color: white;
+    height: 320rpx;
+    border-radius: 10rpx;
+    box-shadow: 0 0 4rpx #d8d6d6;
+}
+
+.threes>view>view image {
+    width: 80rpx;
+    height: 80rpx;
+    margin-left: calc(50% - 40rpx);
+    margin-top: 20rpx;
+}
+
+.stipp {
+    font-size: 24rpx;
+    text-align: center;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+    margin-top: 20rpx;
+}
+
+.go {
+    width: 130rpx;
+    height: 40rpx;
+    border: 2rpx solid #ddd;
+    border-radius: 6rpx;
+    text-align: center;
+    line-height: 40rpx;
+    margin-left: calc(50% - 66rpx);
+    margin-top: 20rpx;
+    font-size: 24rpx;
+}
+
+.firswarap {
+    width: 100%;
+    height: 400rpx;
+    background-color: white;
+    border-radius: 10rpx;
+    margin-top: 20rpx;
+    box-shadow: 0 0 4rpx #d8d6d6;
+    margin-bottom: 20rpx;
+    padding: 20rpx;
+    box-sizing: border-box;
+}

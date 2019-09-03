@@ -1,0 +1,101 @@
+{
+  "pages": [
+    "pages/funcicle/funcicle",
+    "pages/mine_make/mine_make",
+    "pages/wallet_succ/wallet_succ",
+    "pages/wallet_withdrawal/wallet_withdrawal",
+    "pages/wallet_detail/wallet_detail",
+    "pages/wallet/wallet",
+    
+    "pages/share_order_d/share_order_d",
+    "pages/share_order/share_order",
+    "pages/share_member/share_member",
+    "pages/share-pay/share-pay",
+    "pages/share_home/share_home",
+    "pages/mines/mines",
+    "pages/iwillpromote/iwillpromote",
+    "pages/index/index",
+    "pages/star_extend/star_extend",
+    "pages/my_idol/my_idol",
+    "pages/mine/mine",
+    "pages/tg_service/tg_service",
+    "pages/build_xr/build_xr",
+    "pages/enter_jd/enter_jd",
+    "pages/gl_artist/gl_artist",
+    "pages/agent_enter/agent_enter",
+    "pages/share_code/share_code",
+    "pages/fzmysq/fzmysq",
+    "pages/fz_myou/fz_myou",
+    "pages/wd_myou/wd_myou",
+    "pages/apply_ff/apply_ff",
+    "pages/apply_hz/apply_hz",
+    "pages/share_apply/share_apply",
+    "pages/applying/applying",
+    "pages/apply_fail/apply_fail",
+    "pages/upgrade/upgrade",
+    "pages/e_hot/e_hot",
+    "pages/e_top/e_top",
+    "pages/xx_extend/xx_extend",
+    "pages/share_desc/share_desc",
+    "pages/share_record/share_record",
+    "pages/leagure/leagure",
+    "pages/yl_online/yl_online",
+    "pages/submit_notice/submit_notice",
+    "pages/bindphone/bindphone",
+    "pages/notice_detail/notice_detail",
+    "pages/logs/logs",
+    "pages/test/test",
+    "pages/star_detail/star_detail",
+    "pages/funcicle_detail/funcicle_detail",
+    "pages/login/login",
+    "pages/peitao/peitao",
+    "pages/syzn/syzn",
+    "pages/ffsj/ffsj",
+    "pages/agent_fail/agent_fail",
+    "pages/help_enter/help_enter"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "娱乐世界",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#808080",
+    "selectedColor": "#fe5ba9",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/ico-notice-active.png",
+        "iconPath": "images/ico-notice.png",
+        "pagePath": "pages/index/index",
+        "text": "通告"
+      },
+      {
+        "selectedIconPath": "images/stars.png",
+        "iconPath": "images/ico-star.png",
+        "pagePath": "pages/star_extend/star_extend",
+        "text": "星推广"
+      },
+      {
+        "selectedIconPath": "images/ico-entertainment-active.png",
+        "iconPath": "images/ico-entertainment.png",
+        "pagePath": "pages/funcicle/funcicle",
+        "text": "娱乐圈"
+      },
+      {
+        "selectedIconPath": "images/mystar.png",
+        "iconPath": "images/nmystar.png",
+        "pagePath": "pages/my_idol/my_idol",
+        "text": "我的偶像"
+      },
+      {
+        "selectedIconPath": "images/mine.png",
+        "iconPath": "images/ico-me.png",
+        "pagePath": "pages/mines/mines",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

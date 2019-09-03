@@ -1,0 +1,31 @@
+
+<view class="apply_tip">
+    请提交真实的个人信息，确保申请一次通过~
+</view>
+<view class="aitem">
+    <view>手机号</view>
+    <input type="text" placeholder="--" readonly="readonly" class="phone" disabled value='{{phone}}' />
+</view>
+<view class="aitem">
+    <view>姓名</view>
+    <input type="text" placeholder="请输入真实姓名" class="nicheng" readonly="readonly" bindinput='getname' />
+</view>
+<view class="uptitle">
+    请上传个人身份证照
+</view>
+<view class="upfiles">
+    <view>
+        <image src="{{zheng}}" id="zheng" bindtap='zheng' ></image>
+        <br />手持身份证照
+    </view>
+    <view>
+        <image src="{{fan}}" id="fan" bindtap='fan'></image>
+        <br />身份证背面照
+    </view>
+</view>
+<view class="abottom">
+    <view class="aptip">提交则表示您已同意
+        <view>共享联盟认证协议</view>
+    </view>
+    <view class="submit" bindtap='submit'>立即申请</view>
+</view>

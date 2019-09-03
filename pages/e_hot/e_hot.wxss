@@ -1,0 +1,256 @@
+/* pages/e_hot/e_hot.wxss */
+page{
+  background: #f2f2f2;
+  font-size: 28rpx;
+}
+.top{
+  background: #fff;
+  padding: 20rpx 20rpx;
+  box-sizing: border-box;
+}
+.rankhead image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.rankhead{
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+.rankm{
+  display: inline-block;
+  vertical-align: middle;
+}
+.heng{
+  width: 8rpx;
+  height: 34rpx;
+  background: #FF5CAB;
+  display: inline-block;
+  margin-right: 15rpx;
+  vertical-align: middle;
+}
+.jie{
+  margin-top: 20rpx;
+  display: inline-block;
+}
+.instr{
+  margin-top: 20rpx;
+  float: right;
+  color: #FF5CAB;
+}
+.mins{
+  color: #999999;
+  margin-left: 26rpx;
+  margin-top: 20rpx;
+}
+.instrtu{
+  margin-top: 20rpx;
+  width: 100%;
+  height: 350rpx;
+  margin-bottom: 20rpx;
+}
+.instrtu image{
+  width: 100%;
+  height: 100%;
+}
+.inpu{
+  margin-top: 20rpx;
+  margin-left: 16rpx;
+}
+.inp{
+  display: inline-block;
+  vertical-align: middle;
+  width: 80rpx;
+  text-align: center;
+}
+.tina{
+  display: inline-block;
+  vertical-align: middle;
+}
+.cole{
+  color: #e65099;
+  display: inline-block;
+  vertical-align: middle;
+}
+.footer{
+  width: 100%;
+  height:120rpx;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  line-height: 120rpx;
+  display: flex;
+  justify-content: space-between;
+  padding:0 20rpx;
+  box-sizing: border-box;
+  color: #FF5CAB;
+}
+.pay{
+
+  width: 170rpx;
+  height: 70rpx;
+  background: #FF5CAB;
+  color: #fff;
+  line-height: 70rpx;
+  text-align: center;
+  border-radius: 45rpx;
+  margin-top: 24rpx;
+}
+.tkos{
+  position: absolute;
+  bottom: 150rpx;
+  left: 20rpx;
+
+}
+.mar{
+  display: inline-block;
+  vertical-align: middle;
+}
+.mark{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 12;
+}
+.marktop{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+.markron{
+  background: #fff;
+  width: calc(100% - 260rpx);
+  margin-left: 130rpx;
+  margin-top: 200rpx;
+  padding: 20rpx 20rpx;
+  box-sizing: border-box;
+  height: 450rpx;
+  letter-spacing:1rpx;
+}
+.close{
+  margin-top: 30rpx;
+  width: 100%;
+  text-align: center;
+}
+.close image{
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.ttim{
+  font-size:26rpx;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(35,35,35,1);
+display: inline-block;
+background: #f2f2f2;
+margin-right: 6rpx;
+width: calc((100% - 24rpx)/4);
+height: 50rpx;
+line-height: 50rpx;
+text-align: center;
+border-radius: 8rpx;
+}
+.active{
+  background: #FF5CAB;
+  color: #fff;
+}
+.diq{
+  background: #f2f2f2;
+  
+  padding-left: 14rpx;
+  box-sizing: border-box;
+}
+
+/* 地区选择 */
+.ilebels{
+    width: 100%;
+    height: 600rpx;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+.tops{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+    line-height: 80rpx;
+}
+.quxiao{
+    color: #999999;
+    font-size: 32rpx;
+}
+.sure{
+    color: #1AAD19;
+    font-size: 32rpx;
+}
+.ilablein{
+    width: 100%;
+    height: 520rpx;
+    overflow: scroll;
+    padding: 20rpx;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+}
+.ilablein text{
+    display: inline-block;
+    width: 200rpx;
+    line-height: 60rpx;
+    border-radius: 6rpx;
+    border: 1px solid #808080;
+    text-align: center;
+    margin-left: 25rpx;
+    margin-bottom: 20rpx;
+    color: #808080;
+    font-size: 26rpx;
+}
+.floo{
+  height: 50rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.iact{
+    color: #fe5ba9 !important;
+    border: 1px solid #fe5ba9 !important;
+}
+.vmask{
+    width: 80rpx;
+    height: 80rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99rpx;
+    background: rgba(0,0,0,0.3);
+    text-align: center;
+    color: white;
+    line-height: 80rpx;
+    font-size: 20rpx;
+}
+.mask{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 12;
+    /* display: none;  */
+}
+.iact{
+    color: #fe5ba9 !important;
+    border: 1px solid #fe5ba9 !important;
+}
+
+.xzdq{
+  line-height: 65rpx;
+  margin-left: 16rpx;
+ 
+}

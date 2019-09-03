@@ -1,0 +1,7 @@
+<image src="../../images/warn.png" class="wran"></image>
+<view class="rtip">申请驳回</view>
+<view class="reason">
+    驳回原因：
+    <view class="reasons">{{reason}}</view>
+</view>
+<view class="submit" bindtap='resubmit'>重新申请</view>

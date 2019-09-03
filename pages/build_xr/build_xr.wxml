@@ -1,0 +1,103 @@
+<!--pages/build_xr/build_xr.wxml-->
+<view class='top_item'>
+    <text wx:for="{{data}}" wx:key="item" id='{{item.id}}' class='{{ids == item.id?"bact":""}}' bindtap='selects'>{{item.title}}</text>
+</view>
+<!-- 新人入驻 -->
+<view class="wrap1" wx:if="{{ids == 1}}">
+    <view class="clearfix">
+        <image src='../../images/xr01.png' style="width: 100%;float: left;height: 272rpx;"></image>
+    </view>
+    <view class="clearfix">
+        <image src="../../images/sdtq.jpg" style="width: 100%;float: left;height: 76rpx;"></image>
+    </view>
+    <view class="jies">
+        <view class="clearfix jsitem">
+            <image src='../../images/w01.png'></image>
+            <view class="jtfirst">在线预约特权</view>
+            <view class="jtsecond">资料平台展，订单滚滚来</view>
+        </view>
+        <view class="clearfix jsitem">
+            <image src='../../images/w02.png'></image>
+            <view class="jtfirst">终生锁粉特权</view>
+            <view class="jtsecond">将我设为偶像，你就是我的忠实粉丝。</view>
+        </view>
+        <view class="clearfix jsitem">
+            <image src='../../images/w03.png'></image>
+            <view class="jtfirst">个人动态展示</view>
+            <view class="jtsecond">生活工作动态，让粉丝更了解你。</view>
+        </view>
+        <view class="clearfix jsitem">
+            <image src='../../images/w04.png'></image>
+            <view class="jtfirst">粉丝首页独显</view>
+            <view class="jtsecond">'我的偶像'专栏展示，你最闪亮</view>
+        </view>
+    </view>
+</view>
+
+<!-- 新人打造 -->
+<view class="wrap1" wx:elif="{{ids == 2}}">
+    <view class="clearfix">
+        <image src='../../images/xr02.png' style="width: 100%;float: left;height: 272rpx;"></image>
+    </view>
+    <view class="clearfix">
+        <image src="../../images/sdfw.jpg" style="width: 100%;float: left;height: 76rpx;"></image>
+    </view>
+    <view class="jies">
+        <view class="clearfix jsitem">
+            <image src='../../images/sw01.png'></image>
+            <view class="jtfirst">MV拍摄</view>
+            <view class="jtsecond">免费提供服装、化妆、场地、道具、视频剪辑服务</view>
+        </view>
+        <view class="clearfix jsitem">
+            <image src='../../images/sw02.png'></image>
+            <view class="jtfirst">作品宣发推广</view>
+            <view class="jtsecond">10大主流网站，100加地方媒体，100个地方论坛，百度百科推广</view>
+        </view>
+        <view class="clearfix jsitem">
+            <image src='../../images/sw03.png'></image>
+            <view class="jtfirst">站内宣传</view>
+            <view class="jtsecond">星推广首页展示，艺人动态主页展示</view>
+        </view>
+    </view>
+</view>
+
+<!-- 新人输出 -->
+<view class="wrap1" wx:else>
+    <view class="clearfix">
+        <image src='../../images/xr03.png' style="width: 100%;float: left;height: 272rpx;"></image>
+    </view>
+    <view class="clearfix">
+        <image src="../../images/sidfw.jpg" style="width: 100%;float: left;height: 76rpx;"></image>
+    </view>
+    <view class="jies">
+        <view class="clearfix jsitem">
+            <image src='../../images/w01.png'></image>
+            <view class="jtfirst">作品设计定制</view>
+            <view class="jtsecond">提供词曲制作，剧本打造服务</view>
+        </view>
+        <view class="clearfix jsitem">
+            <image src='../../images/w02.png'></image>
+            <view class="jtfirst">作品视频拍摄</view>
+            <view class="jtsecond">提供服装，化妆，场地，道具，视频剪辑服务</view>
+        </view>
+        <view class="clearfix jsitem">
+            <image src='../../images/w03.png'></image>
+            <view class="jtfirst">站内宣传</view>
+            <view class="jtsecond">涵盖常规宣发，各大视频网站宣发</view>
+        </view>
+        <view class="clearfix jsitem">
+            <image src='../../images/w04.png'></image>
+            <view class="jtfirst">明星助力</view>
+            <view class="jtsecond">绝对著名明星助阵拍摄</view>
+        </view>
+    </view>
+</view>
+
+
+<view class="pbottom clearfix">
+    <view class="apays">新人价：
+        <text class='pays'>{{tprice}}元</text>
+        <text class='smalls'>{{lprice}}元</text>
+    </view>
+    <view class="gopay" bindtap='pay'>前往支付</view>
+</view>

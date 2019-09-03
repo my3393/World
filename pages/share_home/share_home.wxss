@@ -1,0 +1,147 @@
+/* pages/share_home/share_home.wxss */
+@import '../mines/mines.wxss';
+page{
+  background: #f2f2f2;
+  font-size: 30rpx;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.tops{
+  background: #fff;
+}
+.times{
+  font-size: 28rpx;
+  margin-top: 15rpx;
+}
+.top_bot{
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 2rpx 6px 12px #333;
+}
+.bot_hen{
+  height: 100rpx;
+}
+.img1{
+  width: 100%;
+  height: 300rpx;
+}
+.img1 image{
+  width: 100%;
+  height: 100%;
+}
+.top-ru{
+  width: 100%;
+  text-align: center;
+  padding-bottom: 30rpx;
+}
+.top-img{
+  margin-top: 30rpx;
+}
+.top-img image{
+  width: 129rpx;
+  height: 129rpx;
+  margin-right: 30rpx;
+}
+.top-j{
+  padding: 20rpx 60rpx;
+  box-sizing: border-box;
+  color: #666;
+  font-size: 28rpx;
+  
+}
+.font{
+  font-family: cursive;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+}
+.join{
+  width: calc(100% - 60rpx);
+  margin-left: 30rpx;
+  background: #FF5CAB;
+  height: 66rpx;
+  line-height: 66rpx;
+  text-align: center;
+  color: #fff;
+   border-radius: 30rpx;
+  font-size: 28rpx;
+}
+.bottos{
+  margin-top: 20rpx;
+  
+  background: #fff;
+  padding: 20rpx;
+  padding-bottom: 30rpx;
+  box-sizing: border-box;
+}
+.sur{
+  margin: 20rpx 0;
+}
+.round{
+  display: inline-block;
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 6rpx;
+  background: #FF94C7;
+  vertical-align: middle;
+}
+.zi{
+  margin-left: 20rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.bott-img{
+  width: 100%;
+  height: 120rpx;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+.bott-img image{
+  width: 100%;
+  height: 100%;
+}
+.footer{
+  color: #FF5CAB;
+  height: 80rpx;
+  width: 100%;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  line-height: 80rpx;
+  padding-left: 40rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+}
+.go{
+  width: 220rpx;
+  height: 80rpx;
+  background: #FF5CAB;
+  color: #fff;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+.four{
+  background: #fff;
+  width: 100%;
+  height: 150rpx;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.shar{
+  text-align: center;
+}
+.shae-img{
+  width: 50rpx;
+  height: 50rpx;
+  display: inline-block;
+}
+.shae-img image{
+  width: 100%;
+  height: 100%;
+}

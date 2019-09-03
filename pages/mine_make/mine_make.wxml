@@ -1,0 +1,167 @@
+<!-- pages/mine_make/mine_make.wxml -->
+<view class="tag">
+  <view wx:for="{{tag}}" class="{{tar == index?'active':''}}" wx:for:index='{{index}}' data-index='{{index}}' bind:tap="tag">
+    {{item.name}}
+  </view>
+</view>
+<view wx:if="{{tar == 0}}">
+   <view class="empty" wx:if="{{detail.length == 0}}">
+     <view class="kon-img">
+        <image src="../../images/kong.png" />
+     </view>
+     <view class="empty-intor">空空如也，快去预约艺人吧</view>
+     <view class="empty-go">前往预约</view>
+   </view>
+   <view wx:else>
+    <view class="res" wx:for="{{detail}}">
+      <view class="nav" >
+        <view class="nav-nam">预约:{{item.artistName}}</view>
+        <view class="nav-rig" wx:if='{{item.status == 0}}'>待接单</view>
+        <view class="nav-rig" wx:if='{{item.status == 1}}'>已接单</view>
+        <view class="nav-rig" wx:if='{{item.status == 2}}'>已回拒</view>
+        <view class="nav-list">{{item.typeName}}:{{item.remark}}</view>
+        <view class="list">
+          <view class="nav-img">
+            <image src="../../images/make01.png" />
+          </view>
+          <view class="nav-name">
+            预付百分比：
+            <text style="color:#F1107D">{{item.percentage}}</text>
+          </view>
+        </view>
+        <view class="list">
+          <view class="nav-img">
+            <image src="../../images/make02.png" />
+          </view>
+          <view class="nav-name">
+            活动预算：
+            <text style="color:#F1107D">{{item.budget}}</text>
+          </view>
+        </view>
+        <view class="list">
+          <view class="nav-img">
+            <image src="../../images/make03.png" />
+          </view>
+          <view class="nav-name">
+            活动时间：
+            <text>{{item.startDate}}-{{item.endDate}}</text>
+          </view>
+        </view>
+        <view class="list">
+          <view class="nav-img">
+            <image src="../../images/make04.png" />
+          </view>
+          <view class="nav-name">
+            活动地点：
+            <view style="display: inline-block;">{{item.provinceName}}-{{item.cityName}}-{{item.areaName}}-{{item.townName}}-{{item.address}}</view>
+          </view>
+        </view>
+      </view>
+      <!-- <view class="bott">
+        <view class="plone">
+          <view class="p-img">
+            <image src="../../images/make05.png" />
+          </view>
+          <view class="p-name">了解更多</view>
+        </view>
+        <view class="refuse" bind:tap="refu">回拒</view>
+        <view class="agreed" >接单</view>
+      </view> -->
+    </view>
+   </view>
+</view>
+<view wx:if="{{tar == 1}}">
+   <view >
+    <view class="empty" wx:if="{{detailes.length == 0}}">
+      <view class="kon-img">
+          <image src="../../images/kong.png" />
+      </view>
+      <view class="empty-intor">空空如也，快去预约艺人吧</view>
+      <view class="empty-go">前往预约</view>
+    </view>
+    <view wx:else>
+      <view class="res" wx:for="{{detailes}}">
+        <view class="nav" >
+          <view class="nav-nam">发起人:{{item.userName}}</view>
+          <view class="nav-rig" wx:if='{{item.status == 0}}'>待接单</view>
+          <view class="nav-rig" wx:if='{{item.status == 1}}'>已接单</view>
+          <view class="nav-rig" wx:if='{{item.status == 2}}'>已回拒</view>
+          <view class="nav-list">{{item.typeName}}:{{item.activityTitle}}</view>
+          <view class="list">
+            <view class="nav-img">
+              <image src="../../images/make01.png" />
+            </view>
+            <view class="nav-name">
+              预付百分比：
+              <text style="color:#F1107D">{{item.percentage}}</text>
+            </view>
+          </view>
+          <view class="list">
+            <view class="nav-img">
+              <image src="../../images/make02.png" />
+            </view>
+            <view class="nav-name">
+              活动预算：
+              <text style="color:#F1107D">{{item.budget}}</text>
+            </view>
+          </view>
+          <view class="list">
+            <view class="nav-img">
+              <image src="../../images/make03.png" />
+            </view>
+            <view class="nav-name">
+              活动时间：
+              <text>{{item.startDate}}-{{item.endDate}}</text>
+            </view>
+          </view>
+          <view class="list">
+            <view class="nav-img">
+              <image src="../../images/make04.png" />
+            </view>
+            <view class="nav-name">
+              <view style="display: inline-block;">活动地点：</view>
+            {{item.provinceName}}-{{item.cityName}}-{{item.areaName}}-{{item.townName}}-{{item.address}}没讲完末未激活
+            </view>
+          </view>
+        </view>
+        <view class="bott" wx:if='{{item.status == 0}}'>
+          <view class="plone">
+            <view class="p-img">
+              <image src="../../images/make05.png" />
+            </view>
+            <view class="p-name" bind:tap="plone" id="{{item.userPhone}}">了解更多</view>
+          </view>
+          <view class="refuse" bind:tap="refu" id="{{item.id}}">回拒</view>
+          <view class="agreed" bind:tap="accept" id='{{item.id}}'>接单</view>
+        </view>
+        <view class="bott" wx:if='{{item.status == 1}}'>
+            <view class="plones">
+              <view class="p-img">
+                <image src="../../images/make05.png" />
+              </view>
+            <view class="p-name" bind:tap="plone" id="{{item.userPhone}}">了解更多</view>
+          </view>
+        </view>
+        <view class="bott" wx:if='{{item.status == 2}}'>
+            <view class="ploness">
+              <view class="p-img">
+                <image src="../../images/make05.png" />
+              </view>
+            <view class="p-name"  id="{{item.userPhone}}">了解更多</view>
+          </view>
+        </view>
+      </view>
+    </view>
+   </view>
+</view>
+
+<view class="mask" hidden="{{isshow}}">
+   <view class="refu">
+       <view class="h2">填写理由</view>
+       <textarea class="area"  placeholder="告诉ta回拒的原因吧～" value="{{valu}}" bindinput="valu"></textarea>
+       <view class="refu-bott">
+         <view bind:tap="refu">取消</view>
+         <view class="que" bind:tap="ques">确定</view>
+       </view>
+   </view>
+</view>

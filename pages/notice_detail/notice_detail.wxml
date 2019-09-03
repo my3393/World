@@ -1,0 +1,55 @@
+<!--pages/notice_detail/notice_detail.wxml-->
+<view class='poster' wx:if="{{datas.poster_path == null}}">
+    <image src='../../images/notice-bg.jpg'></image>
+</view>
+<view class='poster' wx:elif="{{datas.poster_path == ''}}">
+    <image src='../../images/notice-bg.jpg'></image>
+</view>
+<view class='poster' wx:else>
+    <image src='{{datas.poster_path}}'></image>
+</view>
+<!-- wrap -->
+<view class='wrap'>
+    <view style='width: calc(100% - 24rpx);margin-left: 12rpx;'>
+        <view class='item'>
+            <view class='headimg' wx:if="{{datas.head_photo == ''}}">
+                <image src='../../images/head.jpg'></image>
+            </view>
+            <view class='headimg' wx:elif="{{datas.head_photo == null}}">
+                <image src='../../images/head.jpg'></image>
+            </view>
+            <view class='headimg' wx:else>
+                <image src='{{datas.head_photo}}'></image>
+            </view>
+            <view class='uname'>{{datas.username}}</view>
+            <view class='time'>{{datas.create_date}}</view>
+            <view class='bigtitle'>{{datas.announcement_title}}</view>
+            <view class='sitem'>
+                <text>预<text style='color: white;'>空</text>算</text>
+                <text style='color:#fe5ba9;'>{{datas.min_price}}~{{datas.max_price}}</text>
+            </view>
+            <view class='sitem'>
+                <text>所在地</text>
+                <text>{{datas.cityname}}-{{datas.areaname}}</text>
+            </view>
+            <view class='sitem' style='margin-bottom: 10rpx;'>
+                <text>时<text style='color: white;'>空</text>间</text>
+                <text>{{datas.start_date}}~{{datas.end_date}}</text>
+            </view>
+            <view class='lbes'>
+                <image src='../../images/notice-icon.png'></image>
+                <text>{{datas.label_name}}</text>
+            </view>
+        </view>
+    </view>
+    <!-- 通告内容详情 -->
+    <view class='notice-detail'>
+        <text>通告详情</text>
+        <view>{{datas.details}}</view>
+        <text style='margin-top: 50rpx;'>联系方式</text>
+        <view class='contact-way' wx:if="{{datas.weixin == undefined}}" bindtap='seepw'>点击查看微信号</view>
+        <view class='contact-way' wx:else>{{datas.weixin}}</view>
+        <view class='contact-way' wx:if="{{datas.link_phone == undefined}}" bindtap='seepw'>点击查看联系电话</view>
+        <view class='contact-way' wx:else>{{datas.link_phone}}</view>
+    </view>
+</view>

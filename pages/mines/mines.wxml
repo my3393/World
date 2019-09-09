@@ -24,7 +24,7 @@
        </view>
    </view>
 </view>
-
+ 
 <view class='l-head clearfix' bind:tap="shar">
   <view class='l-head-rz'>
     <view class='l-rz' bindtap='apply'>

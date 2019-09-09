@@ -1,0 +1,121 @@
+/* pages/star_ promote/star_promote.wxss */
+page{
+  background: #f2f2f2;
+  font-size: 30rpx;
+}
+.res{
+  margin-top: 30rpx;
+ width: calc(100% - 40rpx);
+ margin-left: 20rpx;
+ height: 80rpx;
+ border-radius: 40rpx;
+ line-height: 80rpx;
+ border:1px solid #cccccc;
+ background: #fff;
+ overflow: hidden;
+}
+.inpu{
+  margin-left: 12rpx;
+  border: 0;
+  height: 80rpx;
+  width: 86%;
+  display: inline-block;
+  text-align: center;
+}
+.sear{
+  width: 46rpx;
+  height: 45rpx;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 20rpx; 
+}
+.sear image{
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+.nav{
+  margin-top: 50rpx;
+}
+.nav-list{
+  width: 100%;
+  height: 140rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  background: #fff;
+}
+.head{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-block;
+ 
+  margin-right: 20rpx;
+}
+.head image{
+  width: 100%;
+  height: 100%;
+}
+.name{
+  display: inline-block;
+}
+.lab{
+  margin-top: 20rpx;
+  color: #cccccc;
+}
+.right{
+  margin-top: 25rpx;
+  float: right;
+  background: #e65099;
+  color: #fff;
+  width: 160rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius: 25rpx;
+}
+
+.yds{
+  width: 100%;
+   height: 100%;
+   position: fixed;
+   top: 0;
+   left: 0;
+   background: rgba(0, 0, 0, 0.4);
+   z-index: 12;
+}
+.yd{
+ position:absolute;
+ width: 500rpx;
+ background: #fff;
+ border-radius: 12rpx;
+ text-align: center;
+ font-size: 28rpx;
+ padding-top: 40rpx;
+ top: 40%;
+ left: 50%;
+ padding: 20rpx 20rpx;
+ box-sizing: content-box;
+ transform: translate(-50%,-50%)
+}
+.lip{
+ margin: 20rpx 0;
+ color: #A3A3A3;
+}
+.baodc{
+width:100%;
+text-align:center;
+margin-top:30rpx;
+color: #F861AA;
+}
+.xioe{
+ margin-top: 50rpx;
+ line-height: 70rpx;
+ display: flex;
+ justify-content: space-around;
+ color: #F861AA;
+}
+.deter{
+ color: #F861AA;
+}

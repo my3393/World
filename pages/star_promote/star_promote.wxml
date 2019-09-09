@@ -1,0 +1,31 @@
+
+   <view class="res">
+     <input  type="text" bindinput="inpu" class="inpu" placeholder="搜索要推广的明星吧~" />
+     <view class="sear" bind:tap="search">
+       <image src="../../images/search.png" />
+     </view>
+   </view>
+   
+<view class="nav">
+  <view class="nav-list" wx:for='{{detail}}' >
+     <view class="head">
+       <image src="{{item.head_photo}}" />
+     </view>
+     <view class="name">
+       <view class="names">{{item.username}}</view>
+       <view class="lab">{{item.label_name}}</view>
+     </view>
+     <view class="right" bindtap="promote" id="{{item.user_id}}" >帮TA推广</view>
+     
+  </view>
+</view>
+
+<view class="yds" hidden='{{isshow}}' >
+			<view class="yd">
+				 请选择支付方式
+    <view class='xioe'>
+          <view class='deter' catchtap='cance'>艺呗</view>
+          <view class='deter' catchtap='deter' >小程序支付</view>
+        </view>
+			</view>
+</view>

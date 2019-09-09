@@ -79,6 +79,7 @@ Page({
   submit(){
     let that = this;
     if(that.data.valu == ''){
+      console.log(that.data.valu)
       wx.showToast({
         title: '请输入提现金额',
         icon: 'none',

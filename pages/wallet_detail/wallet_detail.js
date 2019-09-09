@@ -152,7 +152,7 @@ Page({
    getintegral(){
     let that = this;
     wx.request({
-      url: app.data.urlmall + "/appuserwithdrawal/withdrawalrecord.do",
+      url: app.data.urlmall + "/appintegralrecord/record.do",
       data: {
         token:wx.getStorageSync('token'),
         currentPage:that.data.currentPage,

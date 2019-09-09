@@ -174,10 +174,15 @@ page{
   width: 30rpx;
   height: 36rpx;
   display: inline-block;
-  vertical-align: top;
+  margin-right: 10rpx;
+  
 }
 .rd image{
   width: 100%;
   height: 100%;
-  
+  vertical-align: middle;
+}
+.rds{
+  display: inline-block;
+  vertical-align: middle;
 }

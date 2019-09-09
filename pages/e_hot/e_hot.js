@@ -240,9 +240,12 @@ Page({
     })
   },
   inputs:function(e){
+    var that = this;
     this.setData({
       days: e.detail.value,
-      price: e.detail.value * this.data.prices
+      price: e.detail.value * this.data.prices,
+      name:[],
+      num:'0'
     })
   },
   //价格
@@ -327,7 +330,7 @@ Page({
               paySign: res.data.data.sign.paySign,
               success(res) {
                 wx.showToast({
-                  title: '支付成功',
+                  title: '推广成功',
                   icon: 'none',
                   duration: 1000
                 })

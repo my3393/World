@@ -171,10 +171,9 @@ Page({
         })
     },
     promot: function(e){
-        wx.showToast({
-            title: '推广请前往App或公众号',
-            icon: 'none',
-        })
+       wx.navigateTo({
+         url: '../star_promote/star_promote',
+       })
     },
     topeitao: function(e){
         wx.showToast({

@@ -177,7 +177,7 @@ Page({
 
     /**
      * 页面上拉触底事件的处理函数
-     */
+     */  
     onReachBottom: function() {
         var that = this;
         if (is_add == 0) {
@@ -311,6 +311,38 @@ Page({
             path: '/pages/funcicle/funcicle?bindcode=' + bcode + "&scode=" + scode
         }
     },
+    //去往赛事
+    event:function () {
+       //配套
+       wx.navigateToMiniProgram({
+        appId: 'wx4cef4fe6585f5bfd',
+        path: 'pages/e_home/e_home',
+        extraData: {
+
+        },
+        envVersion: 'release',
+        success(res) {
+          // 打开成功
+        }
+      })
+   
+    },
+    //去往赛事
+    match:function () {
+        //配套
+        wx.navigateToMiniProgram({
+         appId: 'wx8acf25d8b950de31',
+         path: 'pages/pt_mall/pt_mall',
+         extraData: {
+ 
+         },
+         envVersion: 'release',
+         success(res) {
+           // 打开成功
+         }
+       })
+    
+     },
     todetail: function(e) {
         wx.getStorage({
             key: 'userinfo',

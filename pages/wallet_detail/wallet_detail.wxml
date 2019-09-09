@@ -15,7 +15,9 @@
   </view>
 </view>
 <view wx:if="{{id == 2}}">
-  <view class="wu" wx:if="{{integral.length == ''}}"></view>
+  <view class="wu" wx:if="{{integral.length == ''}}">
+    暂无收支明细
+  </view>
   <view>
     <view class="nav" wx:for="{{integral}}" wx:key="{{index}}">
       <view class="intor">{{item.integralInfo}}</view>

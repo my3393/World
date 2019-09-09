@@ -3,6 +3,7 @@ const app = getApp();
 var article_id = '';
 var bcode;
 var user_id;
+var token;
 Page({
 
     /**
@@ -138,8 +139,39 @@ Page({
       }
     },
     yuyue: function(e){
-        wx.navigateTo({
-            url: '../yl_online/yl_online?article_id=' + article_id,
-        })
+      wx.getStorage({
+        key: 'token',
+        success: function (res) {
+          token = res.data;
+          wx.request({
+            url: app.data.urlhead + "/ylsj-api-service/apponlinebook/online.do",
+            data: {
+              token: token,
+              artist_id: article_id
+            },
+            method: 'POST',
+            header: {
+              'content-type': 'application/x-www-form-urlencoded'
+            },
+            dataType: 'json',
+            success: function (res) {
+              console.log(res.data.data)
+              if (res.data.status == 100) {
+                wx.navigateTo({
+                  url: '../yl_online/yl_online?article_id=' + article_id,
+                })
+              } else {
+                wx.showToast({
+                  title: res.data.msg,
+                  icon: 'none',
+                  duration: 500
+                })
+              }
+
+            }
+          });
+        },
+      })
+        
     }
 })

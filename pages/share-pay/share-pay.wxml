@@ -1,13 +1,14 @@
 <!--pages/share-pay/share-pay.wxml-->
-<view class="nav">
-   <view style='margin-left:20rpx;'> 开通类型</view>
-    <view class='nav-j'>
-        <view >
-          共享联盟身份
-          <view style="float:right;">￥99元</view>
-        </view>
-        <view style="font-size:22rpx">赠送积分币999个</view>
-    </view>
+<view class="top-img">
+  <image src="../../images/share5.png"></image>
 </view>
-
+<view class="res">加盟类型</view>
+<view class="list">
+   <view class='list-r {{tar == idx?"active":""}}'  wx:for-index="idx" bindtap="tag" data-type='{{item.type}}' data-num='{{idx}}' wx:for='{{tag}}' wx:key='{{index}}'>
+     <view class="left">{{item.name}}</view>
+     <view class="rigth">
+       <text style="color:#e65099">￥</text>{{item.id}}
+     </view>
+   </view>
+</view>
  <view class="go">立即支付</view>

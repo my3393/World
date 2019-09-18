@@ -41,10 +41,12 @@ Page({
   onLoad: function (options) {
     var that = this;
      this.setData({
-       id:options.id
+       id:options.id,
+       user_id: options.user_id
      })
      this.getplayer();
      this.getprice();
+     this.getbanner();
   },
 
   /**
@@ -93,7 +95,95 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
+    var isactor = wx.getStorageSync("userinfo").is_actor;
+    var isleagure = wx.getStorageSync("userinfo").shareIdentityType;
+    var hasdiol = wx.getStorageSync("userinfo").idol_id;
+    var bcode;
+    var scode;
+    if (isactor == 2) {
+      bcode = wx.getStorageSync("userinfo").user_id;
+      scode = wx.getStorageSync("userinfo").user_id;
+    } else if (isleagure != 0 && hasdiol == null) {
+      bcode = wx.getStorageSync("userinfo").user_id;
+      scode = wx.getStorageSync("userinfo").user_id;
+    } else if (isleagure != 0 && hasdiol != null) {
+      bcode = wx.getStorageSync("userinfo").idol_id;
+      scode = wx.getStorageSync("userinfo").user_id;
+    } else if (hasdiol != null || hasdiol != "") {
+      bcode = wx.getStorageSync("userinfo").idol_id;
+      scode = wx.getStorageSync("userinfo").user_id;
+    } else {
+      bcode = wx.getStorageSync("userinfo").user_id;
+      scode = wx.getStorageSync("userinfo").user_id;
+    }
+    return {
+      title: '一手明星资源，尽在娱乐世界！',
+      path: '/pages/funcicle/funcicle?bindcode=' + bcode + "&scode=" + scode
+    }
+  },
+  //艺呗支付
+  cance: function () {
+    var that = this;
+    if (that.data.time == '') {
+      wx.showToast({
+        title: '请选择时间段',
+        icon: 'none'
+      })
+    } else if (that.data.days == '') {
+      wx.showToast({
+        title: '请选择天数',
+        icon: 'none'
+      })
+    } else if (that.data.days == '0') {
+      wx.showToast({
+        title: '请选择正确天数',
+        icon: 'none'
+      })
+    } else if (that.data.name.length == '0') {
+      wx.showToast({
+        title: '请选择推广地区',
+        icon: 'none'
+      })
+    } else if (that.data.checked == false) {
+      wx.showToast({
+        title: '点击已阅读同意协议',
+        icon: 'none'
+      })
+
+    } else {
+      wx.request({
+        url: app.data.urlhead + "/ylsj-api-service/appheadline/headlineintegralpay.do",
+        data: {
+          token: wx.getStorageSync('token'),
+          spreadId: that.data.id,
+          time: that.data.time,
+          days: that.data.days,
+          provinces: that.data.name,
+        },
+        method: 'POST',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        dataType: 'json',
+        success: function (res) {
+          console.log(res.data.data)
+          if (res.data.status == 100) {
+            that.setData({
+              isshow: !that.data.isshow,
+            })
+            wx.showToast({
+              title: '上热门成功',
+              icon: 'none'
+            })
+          } else {
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none'
+            })
+          }
+        }
+      })
+    }
   },
   //时段选择
   tag:function(e){
@@ -173,15 +263,18 @@ Page({
     var that = this;
     var labels = that.data.players;
     if (name.indexOf(labels[0].region_name) > -1) {
+      console.log(11)
+      
       that.setData({
        
-       price:that.data.nationalPrice * that.data.days
+       price:(that.data.nationalPrice * that.data.days).toFixed(2)
 
       })
     }else{
+      console.log(22)
       that.setData({
 
-        price: that.data.provincePrice * that.data.days * name.length
+        price: (that.data.provincePrice * that.data.days * name.length).toFixed(2)
 
       })
     }
@@ -321,6 +414,7 @@ Page({
         },
         dataType: 'json',
         success: function (res) {
+          console.log(res.data.data)
           if (res.data.status === 100) {
             wx.requestPayment({
               timeStamp: res.data.data.sign.timeStamp,
@@ -366,5 +460,34 @@ Page({
       checked: !checked,
     })
 
+  },
+  getbanner: function (e) {
+    var that = this;
+    wx.request({
+      url: app.data.urlhead + "/ylsj-api-service/appartistvideo/videosDetials.do",
+      data: {
+        user_id: that.data.user_id
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      dataType: 'json',
+      success: function (res) {
+
+
+        console.log(res.data.data)
+        if (res.data.status == 100) {
+          that.setData({
+            banner: res.data.data
+          });
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          })
+        }
+      }
+    })
   },
 })

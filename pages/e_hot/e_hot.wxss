@@ -82,14 +82,17 @@ page{
   bottom: 0;
   left: 0;
   line-height: 120rpx;
-  display: flex;
-  justify-content: space-between;
+ 
   padding:0 20rpx;
   box-sizing: border-box;
   color: #FF5CAB;
 }
+.footer>view{
+  display: inline-block;
+}
 .pay{
-
+  margin-right: 40rpx;
+  float: right;
   width: 170rpx;
   height: 70rpx;
   background: #FF5CAB;

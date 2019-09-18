@@ -7,16 +7,24 @@
    </view>
    
 <view class="nav">
-  <view class="nav-list" wx:for='{{detail}}' >
-     <view class="head">
-       <image src="{{item.head_photo}}" />
+  <view wx:if='{{detail.length == 0}}' class="emtpys">
+     <view class="emptys-img">
+       <image src="../../images/none.png"></image>     
      </view>
-     <view class="name">
-       <view class="names">{{item.username}}</view>
-       <view class="lab">{{item.label_name}}</view>
-     </view>
-     <view class="right" bindtap="promote" id="{{item.user_id}}" >帮TA推广</view>
-     
+     <view class="emptys-intor">居然没有，换个名字试试~ </view>
+  </view>
+  <view wx:else>
+    <view class="nav-list" wx:for='{{detail}}' >
+      <view class="head">
+        <image src="{{item.head_photo}}" />
+      </view>
+      <view class="name">
+        <view class="names">{{item.username}}</view>
+        <view class="lab">{{item.label_name}}</view>
+      </view>
+      <view class="right" bindtap="promote" id="{{item.user_id}}" >帮TA推广</view>
+      
+    </view>
   </view>
 </view>
 

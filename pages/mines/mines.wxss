@@ -35,7 +35,7 @@ page{
   background: #fff;
   margin-top: 30rpx;
   border-radius: 20rpx;
-  box-shadow: 2rpx 6px 12px #333;
+  box-shadow: 0px 5px 3px 0px #a7a7a7;
   box-sizing: border-box;
   padding: 20rpx;
   line-height: 50rpx;

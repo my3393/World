@@ -1,24 +1,46 @@
- <view class="top">
-     <view class="{{tar == index?'active':''}}" wx:for="{{tag}}"  data-index='{{index}}' bind:tap='tag'>{{item.name}}</view>
- </view>
+<view class="top">
+  <view class="{{tar == index?'active':''}}" wx:for="{{tag}}" data-index='{{index}}' bind:tap='tag'>{{item.name}}</view>
+</view>
 
 <view wx:if="{{tar == 0}}">
-   <view class="records" hidden='{{counts == 0}}' wx:for="{{data}}" wx:for-index="idx">
-    <view class="item">
-        <view class="laizhi">
-            来自：{{data[idx].username}}
-            <view class="fee" wx:if="{{data[idx].status == 5}}">已完成</view>
-            <view class="fee" wx:else>未完成</view>
-        </view>
-        <view class="source">
-           {{data[idx].info}}
-            <view>费用：{{data[idx].price}}</view>
-        </view>
-    </view>
-</view>
-<view class="none" hidden='{{counts != 0}}'>
+  <view class="none" wx:if='{{detail.length == 0}}'>
     <image src='../../images/sharenone.png'></image>
     <view class="empty-intor">订单还在路上，耐心等等~</view>
+  </view>
+  <view class="records" wx:else >
+    <view class="item" wx:for="{{detail}}" wx:key='{{index}}'>
+      <view class="laizhi">
+        来自：{{item.username}}
+        <view class="fee" wx:if="{{item.orderStatus == 1}}">已完成</view>
+        <view class="fee" wx:else>未完成</view>
+      </view>
+      <view class="source">
+        {{item.info}}
+        <view>费用：{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+ 
+
 </view>
+
+<view wx:if="{{tar == 1}}">
+   <view class="none" wx:if='{{details.length == 0}}'>
+    <image src='../../images/sharenone.png'></image>
+    <view class="empty-intor">订单还在路上，耐心等等~</view>
+  </view>
+  <view class="records" wx:else >
+    <view class="item" wx:for="{{details}}" wx:key='{{index}}'>
+      <view class="laizhi">
+        来自：{{item.username}}
+        <view class="fee" wx:if="{{item.orderStatus == 1}}">已完成</view>
+        <view class="fee" wx:else>未完成</view>
+      </view>
+      <view class="source">
+        {{item.info}}
+        <view>费用：{{item.price}}</view>
+      </view>
+    </view>
+  </view>
 
 </view>

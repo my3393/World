@@ -1,9 +1,9 @@
 <view class='top'>
 <view class='rank clearfix'>
       <view class='rankhead'>
-        <image src='{{banner.headPhotoOssPath}}'></image>
+        <image src='{{banner.head_photo}}'></image>
       </view>
-      <view class='rankm'>{{players.userName}}</view>
+      <view class='rankm'>{{banner.username}}</view>
 </view>
    <view>
        <view class='jie'>
@@ -29,6 +29,7 @@
     </label>
   </radio-group>
 </view>
+<view class='pay' bindtap='cances'>艺呗支付</view>
 <view class='pay' bindtap='pay'>去支付</view>
 
 <view class='mark' hidden='{{isshow}}'>

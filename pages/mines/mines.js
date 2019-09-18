@@ -31,6 +31,7 @@ Page({
     wx.getStorage({
       key: 'userinfo',
       success: function(res) {
+        console.log(res.data)
           that.setData({
               user: res.data
           });
@@ -70,13 +71,89 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    var isactor = wx.getStorageSync("userinfo").is_actor;
+    var isleagure = wx.getStorageSync("userinfo").shareIdentityType;
+    var hasdiol = wx.getStorageSync("userinfo").idol_id;
+    var bcode;
+    var scode;
+    if (isactor == 2) {
+      bcode = wx.getStorageSync("userinfo").user_id;
+      scode = wx.getStorageSync("userinfo").user_id;
+    } else if (isleagure != 0 && hasdiol == null) {
+      bcode = wx.getStorageSync("userinfo").user_id;
+      scode = wx.getStorageSync("userinfo").user_id;
+    } else if (isleagure != 0 && hasdiol != null) {
+      bcode = wx.getStorageSync("userinfo").idol_id;
+      scode = wx.getStorageSync("userinfo").user_id;
+    } else if (hasdiol != null || hasdiol != "") {
+      bcode = wx.getStorageSync("userinfo").idol_id;
+      scode = wx.getStorageSync("userinfo").user_id;
+    } else {
+      bcode = wx.getStorageSync("userinfo").user_id;
+      scode = wx.getStorageSync("userinfo").user_id;
+    }
+    return {
+      title: '一手明星资源，尽在娱乐世界！',
+      path: '/pages/funcicle/funcicle?bindcode=' + bcode + "&scode=" + scode
+    }
   },
    //共享联盟
    share:function(){
-    wx.navigateTo({
-      url: '../share_home/share_home',
-    })
+     var that = this;
+     wx.navigateTo({
+       url: '../share-pay/share-pay',
+     })
+    //  if (that.data.user.shareIdentityType == 0){
+    //    wx.request({
+    //      url: app.data.urlhead + "/ylsj-api-service/appShareAllinace/isShareAllinace.do",
+    //      data: {
+    //        token: wx.getStorageSync('token'),
+
+    //      },
+    //      method: 'POST',
+    //      header: {
+    //        'content-type': 'application/x-www-form-urlencoded'
+    //      },
+    //      dataType: 'json',
+    //      success: function (res) {
+    //        console.log(res.data.data)
+    //        if (res.data.status == 100) {
+    //          if (res.data.data.isAudit == 1) {
+    //            wx.navigateTo({
+    //              url: '../share_home/share_home',
+    //            })
+    //          }else{
+    //            wx.navigateTo({
+    //              url: '../share_pay/share_pay',
+    //            })
+    //          }
+
+    //        } else if (res.data.status == 103) {
+    //          wx.showToast({
+    //            title: res.data.msg,
+    //            icon: 'none',
+    //            duration: 500
+    //          })
+    //          wx.navigateTo({
+    //            url: '../login/login',
+    //          })
+    //        }  else {
+    //          wx.showToast({
+    //            title: res.data.msg,
+    //            icon: 'none',
+    //            duration: 500
+    //          })
+    //        }
+
+    //      }
+    //    })
+    //  }else{
+    //    wx.navigateTo({
+    //      url: '../share_home/share_home',
+    //    })
+    //  }
+     
+   
   },
   //钱包
   find:function(){

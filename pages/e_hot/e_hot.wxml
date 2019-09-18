@@ -1,9 +1,9 @@
 <view class='top'>
 <view class='rank clearfix'>
       <view class='rankhead'>
-        <image src='{{players.competitionLogoOssPath}}'></image>
+        <image src='{{banner.head_photo}}'></image>
       </view>
-      <view class='rankm'>{{players.competitionTitle}}</view>
+      <view class='rankm'>{{banner.username}}</view>
 </view>
    <view>
        <view class='jie'>
@@ -35,6 +35,7 @@
 <view class='footer'>
    <view wx:if='{{price == ""}}'>--</view>
    <view wx:else>{{price}}</view>
+    <view class='pay' bindtap='cance'>艺呗支付</view>
    <view class='pay' bindtap='pay'>去支付</view>
 </view>
 

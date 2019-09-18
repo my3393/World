@@ -14,11 +14,11 @@
 <view class='nav'>
    <view class='hs'>推广站</view>
    <view>
-       <view class='tui' bindtap='tostardetail' wx:for="{{adver}}" wx:for-index="idx" id='{{adver[idx].spread_id}}'>
+       <view class='tui' bindtap='tostardetail' wx:for="{{adver}}" wx:for-index="idx" id='{{item.artistId}}'>
          <image mode='aspectFill' src='{{adver[idx].photo}}'></image>
          <view class='ttop'>
-            <text class='zhi' id='{{item.spread_id}}' data-user_id='{{item.user_id}}' catchtap='top'>置顶</text>
-            <text id='{{item.spread_id}}' data-user_id='{{item.user_id}}' catchtap='hot'>上头条</text>
+            <text class='zhi' id='{{item.spread_id}}' data-user_id='{{item.artistId}}' catchtap='top'>置顶</text>
+            <text id='{{item.spread_id}}' data-user_id='{{item.artistId}}' catchtap='hot'>上头条</text>
          </view>
          <view class='bott'>
              <view class='l-bott'>{{adver[idx].name}}</view>

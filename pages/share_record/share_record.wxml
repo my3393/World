@@ -1,21 +1,31 @@
-<view class="records"  >
-    <view class="item">
+<view class="none" wx:if='{{detail.length == 0}}'>
+    <image src='../../images/sharenone.png'></image>
+    <view>暂无共享战绩~</view>
+</view>
+
+<view class="records"  wx:else>
+    <view class="item" wx:for='{{detail}}'>
         <view class="sou">
-           在线预约
+           <text wx:if='{{item.originType == 1}}'>(开通会员)通告分红</text>
+           <text wx:if='{{item.originType == 2}}'>够你售分红</text>
+           <text wx:if='{{item.originType == 3}}'>提现</text>
+           <text wx:if='{{item.originType == 4}}'>在线预约</text>
+           <text wx:if='{{item.originType == 5}}'>祝福视频 </text>
+           <text wx:if='{{item.originType == 6}}'>开通共享联盟</text>
+           <text wx:if='{{item.originType == 7}}'>付费服务</text>
+           <text wx:if='{{item.originType == 8}}'>开通会员 </text>
+           <text wx:if='{{item.originType == 9}}'>娱乐配套</text>
+           <text wx:if='{{item.originType == 10}}'>视频录制</text>
             <view class="fee">
-                <small>+</small>{{data[idx].price}}841</view>
+                <small>+</small>{{item.price}}</view>
         </view>
         <view class="laizhi">
-            考核为
-            <view>费用：{{data[idx].originPrice}}894</view>
+            {{item.shareUserName}}
+            <view>费用：{{item.originPrice}}</view>
         </view>
         <view class="source">
-           {{data[idx].info}}打算
+           {{item.info}}
             
         </view>
     </view>
-</view>
-<view class="none" hidden='{{counts != 0}}'>
-    <image src='../../images/sharenone.png'></image>
-    <view>暂无共享战绩~</view>
 </view>

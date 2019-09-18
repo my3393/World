@@ -1,15 +1,17 @@
 // pages/share_record/share_record.js
 const app = getApp();
-var token;
 var bcode;
+let currentPage = 1;
+let detail=[];
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        data: [],
-        counts: 0
+        detail: [],
+      totalPage:'',
+
     },
 
     /**
@@ -19,6 +21,7 @@ Page({
         wx.setNavigationBarTitle({
             title: '共享战绩',
         })
+        this.getrecord();
     },
 
     /**
@@ -33,47 +36,8 @@ Page({
      */
     onShow: function () {
         var that = this;
-        wx.getStorage({
-            key: 'userinfo',
-            success: function (res) {
-                bcode = res.data.user_id;
-                console.log(bcode + "----")
-            },
-        })
-        wx.getStorage({
-            key: 'token',
-            success: function(res) {
-                token = res.data;
-                wx.request({
-                    url: app.data.urlhead + "/ylsj-api-service/appShareAllinace/shareAllinaceOrder.do",
-                    data: {
-                        token: token,
-                        currentPage: 1
-                    },
-                    method: 'POST',
-                    header: {
-                        'content-type': 'application/x-www-form-urlencoded'
-                    },
-                    dataType: 'json',
-                    success: function (res) {
-                        console.log(res.data.data)
-                        if (res.data.status == 100) {
-                            that.setData({
-                                data: res.data.data.historys,
-                                counts: res.data.data.totalResult
-                            })
-                        } else {
-                            wx.showToast({
-                                title: res.data.msg,
-                                icon: 'none',
-                                duration: 500
-                            })
-                        }
-
-                    }
-                })
-            },
-        })
+        
+        
     },
 
     /**
@@ -101,7 +65,16 @@ Page({
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function () {
-
+      var that = this;
+      if (currentPage == that.data.totalPage) {
+        wx.showToast({
+          title: '没有更多了',
+          icon: 'none'
+        })
+      } else {
+        currentPage = currentPage + 1;
+        that.getrecord();
+      } 
     },
 
     /**
@@ -134,5 +107,51 @@ Page({
         title: '一手明星资源，尽在娱乐世界！',
         path: '/pages/funcicle/funcicle?bindcode=' + bcode + "&scode=" + scode
       }
-    }
+    },
+  //共享战绩
+  getrecord() {
+    let that = this;
+    wx.request({
+      url: app.data.urlhead + "/ylsj-api-service/appshareallinace3/sharerecord.do",
+      data: {
+        token:wx.getStorageSync('token'),
+        currentPage: currentPage
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      dataType: 'json',
+      success: function (res) {
+        console.log(res.data.data)
+        if (res.data.status == 100) {
+          for(var i in res.data.data.data){
+            detail.push(res.data.data.data[i])
+          }
+          that.setData({
+            detail: detail,
+            totalPage:res.data.data
+          })
+
+
+        } else if (res.data.status == 103) {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 500
+          })
+          wx.navigateTo({
+            url: '../login/login',
+          })
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 500
+          })
+        }
+
+      }
+    })
+  },
 })

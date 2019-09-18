@@ -1,19 +1,41 @@
 /* pages/share-pay/share-pay.wxss */
 page{
-  padding: 20rpx;
-  box-sizing: border-box;
+  background: #f2f2f2;
   font-size: 30rpx;
 }
-.nav-j{
-  margin-top: 30rpx;
+.top-img{
   width: 100%;
-  height: 120rpx;
-  background: #FF5CAB;
-  border-radius: 30rpx;
-  padding: 30rpx;
+  height: 400rpx;
+  padding: 20rpx;
   box-sizing: border-box;
-  color: #fff;
-  font-size: 28rpx;
+}
+.top-img image{
+  width: 100%;
+  height: 100%;
+}
+.res{
+  margin: 30rpx;
+}
+.list{
+  background: #fff;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.list-r{
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  width: 100%;
+  height: 65rpx;
+  line-height: 65rpx;
+  margin-top: 30rpx;
+  border-radius: 30rpx;
+  border: 1rpx solid #ccc;
+}
+.left{
+  float: left;
+}
+.rigth{
+  float: right;
 }
 .go{
   width:calc(100% - 60rpx);
@@ -26,4 +48,7 @@ page{
   line-height: 70rpx;
   text-align: center;
   font-size: 30rpx;
+}
+.active{
+  border: 1rpx solid #FF5CAB;
 }

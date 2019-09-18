@@ -114,13 +114,47 @@ Page({
       
      })
   },
+  //艺呗支付
   cance:function(){
      var that = this;
      wx.request({
       url: app.data.urlhead + "/ylsj-api-service/appstarspread/integralpay.do",
       data: {
         token:wx.getStorageSync('token'),
-        artistId:that.data.id
+        artistId:id
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      dataType: 'json',
+      success: function (res) {
+        console.log(res.data.data)
+        if (res.data.status == 100) {
+          that.setData({
+            isshow: !that.data.isshow,
+          })
+          wx.showToast({
+            title: '推广成功',
+            icon: 'none'
+          })
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          })
+        }
+      }
+    })
+  },
+  //现金支付
+  deter: function () {
+    var that = this;
+    wx.request({
+      url: app.data.urlhead + "/ylsj-api-service/appstarspread/integralpay.do",
+      data: {
+        token: wx.getStorageSync('token'),
+        artistId: id
       },
       method: 'POST',
       header: {

@@ -167,7 +167,7 @@ Page({
     },
     tostardetail: function(e){
         wx.navigateTo({
-            url: '../star_detail/star_detail?spread_id=' + e.currentTarget.id,
+          url: '../funcicle_detail/funcicle_detail?user_id=' + e.currentTarget.id,
         })
     },
     promot: function(e){

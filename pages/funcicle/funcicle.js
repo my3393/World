@@ -14,7 +14,7 @@ var is_add = 0;
 var others = [];
 var other = [];
 
-var bcode;
+var bcode;  
 Page({
 
     /**

@@ -2,7 +2,7 @@
 <view class="n-top">
    <text class="n-one">推荐</text>
    <text bind:tap="match">配套</text>
-   <text bind:tap="event">活动赛事</text>
+   <text bind:tap="event">艺赛联盟</text>
 </view>
 <view class='tlebels'>
     <view class='active' data-num='{{idx}}' wx:for='{{labels}}' wx:key='{{index}}' class='{{num == idx?"active":""}}' wx:for-index='idx' id='{{labels[idx].label_id}}' bindtap='selectlabel'>{{labels[idx].label_name}}</view>
@@ -47,7 +47,7 @@
                 <image src='{{others[idx].videoconver}}' mode='aspectFill'></image>
                 <image src='../../images/play.png' style='width:70rpx;height:70rpx;position:absolute;left:50%;top:50%;transform: translate(-50%,-50%);'></image>
             </view>
-            <view bindtap='handleImagePreview' id='{{others[idx].other}}' wx:for='{{others[idx].other}}' wx:for-index="idss" wx:for-key="item">
+            <view bindtap='handleImagePreview' id='{{item}}' wx:for='{{others[idx].other}}' wx:for-index="idss" wx:for-key="item">
                 <image src='{{item}}' mode='aspectFill'></image>
             </view>
         </view>

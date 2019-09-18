@@ -1,7 +1,8 @@
 // pages/share_order/share_order.js
 const app = getApp();
-var token;
-var bcode;
+let detail = [];
+let details = [];
+let currentPage = 1;
 Page({
 
     /**
@@ -37,50 +38,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        var that = this;
-        wx.getStorage({
-            key: 'userinfo',
-            success: function (res) {
-                bcode = res.data.user_id;
-                console.log(bcode + "----")
-            },
-        })
-        wx.getStorage({
-            key: 'token',
-            success: function (res) {
-                token = res.data;
-                wx.request({
-                    url: app.data.urlhead + "/ylsj-api-service/appShareAllinace/myShareAllinaceOrder.do",
-                    data: {
-                        token: token,
-                        type: 1,
-                        currentPage: 1
-                    },
-                    method: 'POST',
-                    header: {
-                        'content-type': 'application/x-www-form-urlencoded'
-                    },
-                    dataType: 'json',
-                    success: function (res) {
-                        console.log(res.data.data)
-                        if (res.data.status == 100) {
-                            that.setData({
-                                data: res.data.data.orders,
-                                counts: res.data.data.totalResult
-                            })
-                            console.log(that.data.data.length)
-                        } else {
-                            wx.showToast({
-                                title: res.data.msg,
-                                icon: 'none',
-                                duration: 500
-                            })
-                        }
-
-                    }
-                })
-            },
-        })
+       
     },
 
     /**
@@ -111,7 +69,20 @@ Page({
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function () {
-
+      var that = this;
+      if (currentPage == that.data.totalPage) {
+        wx.showToast({
+          title: '没有更多了',
+          icon: 'none'
+        })
+      } else {
+        currentPage = currentPage + 1;
+        if(that.data.tar == 0){
+          that.getdetail();
+        }else{
+          that.getdetails();
+        }
+      } 
     },
 
     /**
@@ -148,8 +119,106 @@ Page({
     tag(e){
         
       var that = this;
+      let index = e.currentTarget.dataset.index
+      currentPage = 1
       that.setData({
-          tar:e.currentTarget.dataset.index
+        tar: index,
+        totalPage:'',
+      })
+      if(index == 0){
+        that.getdetail();
+      }else{
+        that.getdetails();
+      }
+    },
+    getdetail(){
+      let that = this;
+      wx.request({
+        url: app.data.urlhead + "/ylsj-api-service/appshareallinace3/myshareorder.do",
+        data: {
+          token: wx.getStorageSync('token'),
+          currentPage: currentPage
+        },
+        method: 'POST',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        dataType: 'json',
+        success: function (res) {
+          console.log(res.data.data)
+          if (res.data.status == 100) {
+            for (var i in res.data.data.data) {
+              detail.push(res.data.data.data[i])
+            }
+            that.setData({
+              detail: detail,
+              totalPage: res.data.data
+            })
+
+
+          } else if (res.data.status == 103) {
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none',
+              duration: 500
+            })
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          } else {
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none',
+              duration: 500
+            })
+          }
+
+        }
+      })
+    },
+    getdetails() {
+      let that = this;
+      wx.request({
+        url: app.data.urlhead + "/ylsj-api-service/appshareallinace3/myshareorder.do",
+        data: {
+          token: wx.getStorageSync('token'),
+          currentPage: currentPage
+        },
+        method: 'POST',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        dataType: 'json',
+        success: function (res) {
+          console.log(res.data.data)
+          if (res.data.status == 100) {
+            for (var i in res.data.data.data) {
+              details.push(res.data.data.data[i])
+            }
+            that.setData({
+              details: details,
+              totalPage: res.data.data
+            })
+
+
+          } else if (res.data.status == 103) {
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none',
+              duration: 500
+            })
+            wx.navigateTo({
+              url: '../login/login',
+            })
+          } else {
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none',
+              duration: 500
+            })
+          }
+
+        }
       })
     }
 })

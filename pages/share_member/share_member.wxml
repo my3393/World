@@ -1,5 +1,5 @@
 <!-- pages/share_member/share_member.wxml -->
-<!-- <view>
+<view>
   <view class="top">通过自己分享开通的共享联盟用户</view>
   <view>
     <view class="nav">
@@ -9,7 +9,7 @@
       <view class="nav-name">马里奥</view>
     </view>
   </view>
-</view> -->
+</view>
 
 <view class="empty">
      <view class="empty-img">

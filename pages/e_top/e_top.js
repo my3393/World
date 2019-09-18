@@ -38,31 +38,7 @@ Page({
         id: options.id,
         user_id:options.user_id
       })
-    wx.request({
-      url: app.data.urlhead + "/ylsj-api-service/appartistvideo/videosDetials.do",
-      data: {
-        user_id: options.user_id
-      },
-      method: 'POST',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      dataType: 'json',
-      success: function (res) {
-        console.log(res.data.data)
-        if (res.data.status == 100) {
-         
-          that.setData({
-            datas: res.data.data
-          });
-        } else {
-          wx.showToast({
-            title: res.data.msg,
-            icon: 'none'
-          })
-        }
-      }
-    })
+    
       that.getplayer();
       that.getprice();
   },
@@ -113,8 +89,73 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-   
+    var isactor = wx.getStorageSync("userinfo").is_actor;
+    var isleagure = wx.getStorageSync("userinfo").shareIdentityType;
+    var hasdiol = wx.getStorageSync("userinfo").idol_id;
+    var bcode;
+    var scode;
+    if (isactor == 2) {
+      bcode = wx.getStorageSync("userinfo").user_id;
+      scode = wx.getStorageSync("userinfo").user_id;
+    } else if (isleagure != 0 && hasdiol == null) {
+      bcode = wx.getStorageSync("userinfo").user_id;
+      scode = wx.getStorageSync("userinfo").user_id;
+    } else if (isleagure != 0 && hasdiol != null) {
+      bcode = wx.getStorageSync("userinfo").idol_id;
+      scode = wx.getStorageSync("userinfo").user_id;
+    } else if (hasdiol != null || hasdiol != "") {
+      bcode = wx.getStorageSync("userinfo").idol_id;
+      scode = wx.getStorageSync("userinfo").user_id;
+    } else {
+      bcode = wx.getStorageSync("userinfo").user_id;
+      scode = wx.getStorageSync("userinfo").user_id;
+    }
+    return {
+      title: '一手明星资源，尽在娱乐世界！',
+      path: '/pages/funcicle/funcicle?bindcode=' + bcode + "&scode=" + scode
+    }
   }, 
+  //艺呗支付
+  cances: function () {
+    var that = this;
+    if (that.data.checked == false) {
+      wx.showToast({
+        title: '点击已阅读同意协议',
+        icon: 'none'
+      })
+
+    } else {
+      wx.request({
+        url: app.data.urlhead + "/ylsj-api-service/appheadline/spreadtopintegralpay.do",
+        data: {
+          token: wx.getStorageSync('token'),
+          spreadId: that.data.id
+        },
+        method: 'POST',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        dataType: 'json',
+        success: function (res) {
+          console.log(res.data.data)
+          if (res.data.status == 100) {
+            that.setData({
+              isshow: !that.data.isshow,
+            })
+            wx.showToast({
+              title: '置顶成功',
+              icon: 'none'
+            })
+          } else {
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none'
+            })
+          }
+        }
+      })
+    }
+  },
   checked: function (e) {
     var that = this;
     var checked = that.data.checked;

@@ -100,58 +100,58 @@ Page({
    //共享联盟
    share:function(){
      var that = this;
-     wx.navigateTo({
-       url: '../share-pay/share-pay',
-     })
-    //  if (that.data.user.shareIdentityType == 0){
-    //    wx.request({
-    //      url: app.data.urlhead + "/ylsj-api-service/appShareAllinace/isShareAllinace.do",
-    //      data: {
-    //        token: wx.getStorageSync('token'),
+    //  wx.navigateTo({
+    //    url: '../share-pay/share-pay',
+    //  })
+     if (that.data.user.shareIdentityType == 0){
+       wx.request({
+         url: app.data.urlhead + "/ylsj-api-service/appShareAllinace/isShareAllinace.do",
+         data: {
+           token: wx.getStorageSync('token'),
 
-    //      },
-    //      method: 'POST',
-    //      header: {
-    //        'content-type': 'application/x-www-form-urlencoded'
-    //      },
-    //      dataType: 'json',
-    //      success: function (res) {
-    //        console.log(res.data.data)
-    //        if (res.data.status == 100) {
-    //          if (res.data.data.isAudit == 1) {
-    //            wx.navigateTo({
-    //              url: '../share_home/share_home',
-    //            })
-    //          }else{
-    //            wx.navigateTo({
-    //              url: '../share_pay/share_pay',
-    //            })
-    //          }
+         },
+         method: 'POST',
+         header: {
+           'content-type': 'application/x-www-form-urlencoded'
+         },
+         dataType: 'json',
+         success: function (res) {
+           console.log(res.data.data)
+           if (res.data.status == 100) {
+             if (res.data.data.isAudit == 1) {
+               wx.navigateTo({
+                 url: '../share_home/share_home',
+               })
+             }else{
+               wx.navigateTo({
+                 url: '../share_pay/share_pay',
+               })
+             }
 
-    //        } else if (res.data.status == 103) {
-    //          wx.showToast({
-    //            title: res.data.msg,
-    //            icon: 'none',
-    //            duration: 500
-    //          })
-    //          wx.navigateTo({
-    //            url: '../login/login',
-    //          })
-    //        }  else {
-    //          wx.showToast({
-    //            title: res.data.msg,
-    //            icon: 'none',
-    //            duration: 500
-    //          })
-    //        }
+           } else if (res.data.status == 103) {
+             wx.showToast({
+               title: res.data.msg,
+               icon: 'none',
+               duration: 500
+             })
+             wx.navigateTo({
+               url: '../login/login',
+             })
+           }  else {
+             wx.showToast({
+               title: res.data.msg,
+               icon: 'none',
+               duration: 500
+             })
+           }
 
-    //      }
-    //    })
-    //  }else{
-    //    wx.navigateTo({
-    //      url: '../share_home/share_home',
-    //    })
-    //  }
+         }
+       })
+     }else{
+       wx.navigateTo({
+         url: '../share_home/share_home',
+       })
+     }
      
    
   },

@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/test/test",
     "pages/funcicle/funcicle",
     "pages/star_promote/star_promote",
     
@@ -45,7 +46,7 @@
     "pages/bindphone/bindphone",
     "pages/notice_detail/notice_detail",
     "pages/logs/logs",
-    "pages/test/test",
+    
     "pages/star_detail/star_detail",
     "pages/funcicle_detail/funcicle_detail",
     "pages/login/login",

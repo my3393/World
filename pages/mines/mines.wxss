@@ -39,6 +39,7 @@ page{
   box-sizing: border-box;
   padding: 20rpx;
   line-height: 50rpx;
+      
 }
 .bot_one{
   display: inline-block;
